@@ -1,0 +1,2460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Japan Trip — March/April 2027</title>
+<style>
+  :root {
+    --sakura: #f4b8c7;
+    --sakura-dark: #d96b85;
+    --ink: #1f2937;
+    --ink-soft: #4b5563;
+    --paper: #fffaf7;
+    --card: #ffffff;
+    --line: #e5e7eb;
+    --accent: #b91c1c;
+    --gold: #c9962b;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.55;
+  }
+  header.hero {
+    background: linear-gradient(135deg, #fde2e7 0%, #fcd9c5 100%);
+    padding: 60px 24px 80px;
+    text-align: center;
+    border-bottom: 4px solid var(--sakura);
+    position: relative;
+    overflow: hidden;
+  }
+  header.hero::before { content: "🌸"; position: absolute; top: 20px; left: 30px; font-size: 40px; opacity: 0.3; }
+  header.hero::after { content: "🌸"; position: absolute; bottom: 20px; right: 30px; font-size: 40px; opacity: 0.3; }
+  header.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin: 0 0 8px;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  header.hero .subtitle {
+    color: var(--ink-soft);
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  header.hero .dates {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: var(--card);
+    border-radius: 999px;
+    color: var(--sakura-dark);
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  nav.toc {
+    position: sticky;
+    top: 0;
+    background: var(--card);
+    border-bottom: 1px solid var(--line);
+    padding: 12px 24px;
+    z-index: 50;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  }
+  nav.toc ul {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  nav.toc a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    transition: all 0.15s;
+  }
+  nav.toc a:hover {
+    background: var(--sakura);
+    color: white;
+  }
+  main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+  section.city {
+    margin-bottom: 60px;
+  }
+  section.city > h2 {
+    font-size: 2.2rem;
+    margin: 0 0 8px;
+    color: var(--accent);
+    border-bottom: 3px solid var(--sakura);
+    padding-bottom: 10px;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  section.city > h2 .jp {
+    color: var(--gold);
+    font-weight: 400;
+    font-size: 1.4rem;
+  }
+  section.city > h2 .nights {
+    margin-left: auto;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    font-weight: 400;
+    background: var(--paper);
+    padding: 4px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+  }
+  section.city > p.intro {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+    max-width: 900px;
+  }
+  .day-header {
+    margin: 40px 0 20px;
+    padding: 14px 20px;
+    background: linear-gradient(90deg, var(--sakura) 0%, transparent 100%);
+    border-left: 4px solid var(--sakura-dark);
+    border-radius: 4px;
+  }
+  .day-header h3 {
+    margin: 0;
+    font-size: 1.35rem;
+    color: var(--ink);
+  }
+  .day-header .day-label {
+    color: var(--sakura-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .places {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+    gap: 24px;
+  }
+  .place {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: box-shadow 0.15s;
+    display: flex;
+    flex-direction: column;
+  }
+  .place:hover {
+    box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+  }
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    background: #f3f4f6;
+  }
+  .gallery .main-img-wrap {
+    aspect-ratio: 16 / 10;
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+    position: relative;
+    overflow: hidden;
+    cursor: zoom-in;
+  }
+  .gallery .main-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.2s;
+  }
+  .gallery .main-img-wrap .loading {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+  }
+  .gallery .thumbs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    padding: 4px;
+    background: var(--card);
+  }
+  .gallery .thumbs img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    transition: all 0.15s;
+  }
+  .gallery .thumbs img:hover {
+    transform: scale(1.05);
+    border-color: var(--sakura);
+  }
+  .gallery .thumbs img.active {
+    border-color: var(--sakura-dark);
+  }
+
+  .body {
+    padding: 18px 22px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .place h4 {
+    margin: 0 0 6px;
+    font-size: 1.25rem;
+    color: var(--ink);
+  }
+  .place h4 .jp-name {
+    color: var(--gold);
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin-left: 8px;
+  }
+  .place .lead {
+    color: var(--ink);
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 6px 0 14px;
+    line-height: 1.5;
+  }
+
+  .detail-block {
+    border-top: 1px dashed var(--line);
+    padding: 10px 0 8px;
+  }
+  .detail-block:first-of-type { border-top: none; }
+  .detail-label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--sakura-dark);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .detail-block p, .detail-block ul {
+    margin: 4px 0;
+    color: var(--ink-soft);
+    font-size: 0.93rem;
+    line-height: 1.5;
+  }
+  .detail-block ul { padding-left: 18px; }
+  .detail-block ul li { margin-bottom: 3px; }
+
+  .detail-block.kids .detail-label { color: #b45309; }
+  .detail-block.food .detail-label { color: #4d7c0f; }
+  .detail-block.photo .detail-label { color: #075985; }
+  .detail-block.story .detail-label { color: #6b21a8; }
+
+  .quick-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+  }
+  .info-item {
+    font-size: 0.78rem;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--paper);
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+  }
+
+  .actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+  .actions a {
+    color: var(--sakura-dark);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: #fef2f3;
+    transition: background 0.15s;
+  }
+  .actions a:hover { background: var(--sakura); color: white; }
+
+  .summary-box {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 40px;
+  }
+  .summary-box h2 {
+    margin-top: 0;
+    color: var(--accent);
+  }
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .summary-stat {
+    background: var(--paper);
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+  }
+  .summary-stat .label { color: var(--ink-soft); font-size: 0.85rem; margin-bottom: 4px; }
+  .summary-stat .value { font-size: 1.2rem; font-weight: 700; color: var(--ink); }
+
+  .cost-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    background: var(--card);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .cost-table th, .cost-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  .cost-table th { background: var(--paper); font-weight: 600; color: var(--ink-soft); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .cost-table tr:last-child td { border-bottom: none; }
+  .cost-table tr.total { background: #fef3c7; font-weight: 700; }
+  .cost-table td.amount { text-align: right; font-variant-numeric: tabular-nums; color: var(--accent); font-weight: 600; }
+
+  /* Rates bar */
+  .rates-bar {
+    background: linear-gradient(90deg, #fef3c7 0%, #fde2e7 100%);
+    padding: 10px 24px;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.92rem;
+    color: var(--ink);
+  }
+  .rates-bar .rates-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: center;
+    justify-content: center;
+  }
+  .rates-bar .rate-item {
+    background: var(--card);
+    padding: 4px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    font-weight: 500;
+  }
+  .rates-bar .rate-item strong { color: var(--accent); }
+  .rates-bar .rates-meta { color: var(--ink-soft); font-size: 0.82rem; }
+
+  /* No-wiki fallback */
+  .no-wiki-fallback {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e293b 0%, #4338ca 50%, #db2777 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  .no-wiki-fallback .nwf-icon { font-size: 56px; margin-bottom: 8px; }
+  .no-wiki-fallback .nwf-text { font-weight: 600; margin-bottom: 4px; font-size: 0.98rem; }
+  .no-wiki-fallback .nwf-sub { font-size: 0.85rem; opacity: 0.85; margin-bottom: 14px; }
+  .no-wiki-fallback .nwf-btn {
+    display: inline-block;
+    padding: 8px 18px;
+    background: rgba(255,255,255,0.95);
+    color: var(--sakura-dark);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: transform 0.15s;
+  }
+  .no-wiki-fallback .nwf-btn:hover { transform: scale(1.05); }
+
+  /* Cost table ILS column */
+  .cost-table td.amount-ils { text-align: right; font-variant-numeric: tabular-nums; color: #0369a1; font-weight: 600; }
+  .cost-table .ils-loading { color: var(--ink-soft); font-weight: 400; font-style: italic; }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    cursor: zoom-out;
+    padding: 30px;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .lightbox-close {
+    position: absolute;
+    top: 20px; right: 30px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    background: none; border: none;
+  }
+
+  footer {
+    text-align: center;
+    padding: 40px 24px;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--line);
+    margin-top: 40px;
+  }
+
+  @media (max-width: 600px) {
+    nav.toc ul { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
+    nav.toc a { white-space: nowrap; }
+    .places { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>🇯🇵 Japan Family Trip 🌸</h1>
+  <p class="subtitle">Tokyo · Kyoto · Osaka — Cherry Blossom Season</p>
+  <div class="dates">March 28 – April 11, 2027 · 15 days · Family of 5</div>
+</header>
+
+<nav class="toc">
+  <ul>
+    <li><a href="#summary">Overview</a></li>
+    <li><a href="#tokyo">Tokyo</a></li>
+    <li><a href="#kyoto">Kyoto</a></li>
+    <li><a href="#osaka">Osaka</a></li>
+    <li><a href="#food">🍣 Food Guide</a></li>
+    <li><a href="#costs">Costs</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+  </ul>
+</nav>
+
+<div class="rates-bar" id="rates-bar">
+  <div class="rates-content">
+    <span style="font-weight: 600;">💱 Live exchange rates:</span>
+    <span class="rate-item"><strong>$1</strong> = <strong data-rate="usd-jpy">…</strong></span>
+    <span class="rate-item"><strong>₪1</strong> = <strong data-rate="ils-jpy">…</strong></span>
+    <span class="rate-item"><strong>¥100</strong> = <strong data-rate="jpy-usd">…</strong> / <strong data-rate="jpy-ils">…</strong></span>
+    <span class="rates-meta">via frankfurter.dev · <span class="rates-date">loading…</span></span>
+  </div>
+</div>
+
+<main>
+
+<section id="summary" class="summary-box">
+  <h2>Trip Overview</h2>
+  <p>A 14-night family trip during peak cherry blossom season. Relaxed pace — one or two major sights per day with built-in downtime. Apartment-based lodging for the space and breakfast flexibility a family of 5 needs. Each place below has photos from Wikipedia plus a link to search more on Google Images, with historical context, hidden details to look for, kid tips, food suggestions, and the best photo spots.</p>
+  <div class="summary-grid">
+    <div class="summary-stat"><div class="label">Travelers</div><div class="value">5 (2 + 3 kids)</div></div>
+    <div class="summary-stat"><div class="label">Duration</div><div class="value">14 nights</div></div>
+    <div class="summary-stat"><div class="label">Cities</div><div class="value">Tokyo · Kyoto · Osaka</div></div>
+    <div class="summary-stat"><div class="label">Budget</div><div class="value">$19–22K USD</div></div>
+    <div class="summary-stat"><div class="label">Season</div><div class="value">🌸 Sakura peak</div></div>
+    <div class="summary-stat"><div class="label">Theme park</div><div class="value">Tokyo DisneySea</div></div>
+  </div>
+</section>
+
+<!-- ============ TOKYO ============ -->
+<section id="tokyo" class="city">
+  <h2>Tokyo <span class="jp">東京</span> <span class="nights">6 nights</span></h2>
+  <p class="intro">The world's largest metropolitan area: 37 million people, the busiest train station on Earth (Shinjuku, 3.6 million riders daily), and a city that reinvents itself every decade. Base yourself in Shinjuku, Shibuya, or near Ueno. Day 1 is a soft jet-lag day — don't overplan it.</p>
+
+  <div class="day-header">
+    <span class="day-label">Day 1 · Arrival</span>
+    <h3>Land, settle, light walk</h3>
+  </div>
+  <div class="places">
+
+    <div class="place" data-wiki="Shinjuku" data-search="Shinjuku Tokyo">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Shinjuku <span class="jp-name">新宿</span></h4>
+        <p class="lead">Tokyo's neon-soaked downtown — towering skyscrapers next to centuries-old ramen alleys.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>Shinjuku Station handles 3.6 million passengers a day — about 40% of Israel's population, passing through one building. After WW2 destroyed most of the area, it became Tokyo's "second downtown," explicitly designed as the city's western commercial hub. The west side (skyscrapers) is corporate Tokyo; the east side (Kabukicho, Golden Gai) is its wilder mirror.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Don't miss</span>
+          <ul>
+            <li><strong>Omoide Yokocho</strong> ("Memory Lane") — 60+ tiny post-WW2 ramen and yakitori stalls in a 4-meter-wide alley</li>
+            <li><strong>Tokyo Metropolitan Government Building</strong> — free observation deck at 202m, often less crowded than Skytree</li>
+            <li><strong>Godzilla Head</strong> peeking over the Toho Cinemas building in Kabukicho</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>Take the kids to the free Tokyo Government observation deck before dinner — they'll see how vast Tokyo really is. On clear evenings you can see Mt. Fuji silhouetted at sunset.</p>
+        </div>
+
+        <div class="detail-block food">
+          <span class="detail-label">🍜 Eat here</span>
+          <p>Omoide Yokocho for atmosphere — try Asadachi for grilled chicken or Iseya for yakitori. For family-friendly: <strong>Ichiran Ramen</strong> (individual booth seating, kids love it) or any of the floors of Lumine Est department store.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 2–3 hrs (evening)</span>
+          <span class="info-item">💰 Free to walk</span>
+          <span class="info-item">🚇 JR Shinjuku Stn</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="day-header">
+    <span class="day-label">Day 2 · Old Tokyo</span>
+    <h3>Asakusa & Skytree</h3>
+  </div>
+  <div class="places">
+
+    <div class="place" data-wiki="Sensō-ji" data-search="Sensoji temple Asakusa">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Sensō-ji <span class="jp-name">浅草寺</span></h4>
+        <p class="lead">Tokyo's oldest temple, founded in 645 AD around a tiny golden Kannon statue that two fisherman brothers pulled from the Sumida River.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>In 628 AD, two fisherman brothers, Hinokuma Hamanari and Hinokuma Takenari, caught a small golden statue of Kannon (the bodhisattva of compassion) in their fishing net. Their village headman converted his house into a small temple. By 645 AD the temple had grown into Sensō-ji. Over 14 centuries it became the spiritual heart of old Edo — destroyed in WW2 firebombings and rebuilt in concrete in 1958, faithful in every detail except material.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Look for</span>
+          <ul>
+            <li>The <strong>700kg paper lantern</strong> at Kaminarimon ("Thunder Gate") — look up at the underside for the carved dragon</li>
+            <li>The <strong>five-story pagoda</strong> on the left side of the main hall — dramatically lit at night</li>
+            <li><strong>Asakusa Shrine</strong> behind the main hall — same complex, near-empty, dedicated to the fishermen brothers</li>
+            <li><strong>Incense cauldron</strong> in front of the temple — bathe yourself in the smoke for health</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>The <strong>omikuji fortune ritual</strong> is hands-on magic: shake the silver box, pull a numbered stick, find your fortune in the drawer. 100 yen each. If you get bad fortune, tie it to the metal rack so it stays at the temple.</p>
+        </div>
+
+        <div class="detail-block food">
+          <span class="detail-label">🍜 Eat here</span>
+          <p><strong>Ningyo-yaki</strong> — sponge cakes shaped like little dolls, filled with sweet red bean, baked fresh on Nakamise-dori. <strong>Asakusa Kagetsudo</strong> sells what's widely considered Tokyo's best melon-pan. For lunch: <strong>Daikokuya tempura</strong> (since 1887).</p>
+        </div>
+
+        <div class="detail-block photo">
+          <span class="detail-label">📸 Photo spot</span>
+          <p>The <strong>Asakusa Culture Tourist Information Center</strong> across from Kaminarimon has a free 8th-floor observation deck — view of the temple, Nakamise, and Skytree in one frame.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 2–3 hrs</span>
+          <span class="info-item">💰 Free</span>
+          <span class="info-item">🚇 Asakusa Station</span>
+          <span class="info-item">🕐 Grounds always open</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+    <div class="place" data-wiki="Nakamise-dori" data-search="Nakamise dori Asakusa">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Nakamise-dori <span class="jp-name">仲見世通り</span></h4>
+        <p class="lead">A 250m approach to Sensō-ji lined with 88 stalls — one of the world's oldest continually-operating shopping streets.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>The shops here date back to the early 1700s, when locals were given permission to set up stalls in exchange for cleaning the temple grounds. Many current shopowners are direct descendants of the original families. Officially shops open 9am but many start earlier; closing time is around 7pm.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Best stalls</span>
+          <ul>
+            <li><strong>Kibido</strong> — kibi-dango millet dumplings, made on the spot</li>
+            <li><strong>Sukeroku</strong> — handmade traditional Japanese toys (Edo-period style)</li>
+            <li><strong>Kuroda</strong> — handcrafted folding fans, since 1856</li>
+            <li><strong>Tokiwado</strong> — kaminari-okoshi (puffed rice candy), the temple's signature snack</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>Give each kid a budget (¥1000 / ~$7) and let them pick a souvenir from anywhere on the street. Best toy and candy variety of any tourist spot in Tokyo.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 1 hr</span>
+          <span class="info-item">💰 Snacks ¥100–500</span>
+          <span class="info-item">🚇 Asakusa Stn</span>
+          <span class="info-item">🕐 9am–7pm</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+    <div class="place" data-wiki="Tokyo Skytree" data-search="Tokyo Skytree">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Tokyo Skytree <span class="jp-name">東京スカイツリー</span></h4>
+        <p class="lead">At 634 meters, the world's tallest tower (and second-tallest free-standing structure on Earth after Burj Khalifa).</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>Opened in 2012 to replace Tokyo Tower as the city's digital TV broadcasting hub — Tokyo Tower wasn't tall enough to clear the new skyscrapers. The number <strong>634</strong> was chosen because in old Japanese it can be read "mu-sa-shi" — Musashi, the old name of this region. Designed to withstand a 7.0 earthquake using a central concrete shaft + traditional pagoda-inspired counter-vibration.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Two observation decks</span>
+          <ul>
+            <li><strong>Tembo Deck (350m)</strong> — main viewing platform with glass floor sections</li>
+            <li><strong>Tembo Galleria (450m)</strong> — spiral walkway tube going up another 100m</li>
+            <li><strong>Solamachi mall</strong> at the base — 300+ shops, restaurants, an aquarium, and a planetarium</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>The <strong>glass floor section</strong> on the Tembo Deck is a thrill (or terror) — stand on it and look straight down 340m. The Sumida Aquarium in Solamachi is great if anyone wants a break.</p>
+        </div>
+
+        <div class="detail-block photo">
+          <span class="detail-label">📸 Photo spot</span>
+          <p>For Mt. Fuji visible behind Tokyo, the Tembo Galleria at sunset on a clear winter/early-spring day. Best photo OF Skytree: the <strong>Jukkenbashi Bridge</strong> with the tree reflecting in the Kita-jukken river.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 2 hrs</span>
+          <span class="info-item">💰 ¥3100/adult (~$22)</span>
+          <span class="info-item">🚇 Oshiage Stn</span>
+          <span class="info-item">🕐 8am–10pm</span>
+          <span class="info-item">💡 Book online — skip lines</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="day-header">
+    <span class="day-label">Day 3 · Young Tokyo</span>
+    <h3>Shibuya, Harajuku & Meiji Shrine</h3>
+  </div>
+  <div class="places">
+
+    <div class="place" data-wiki="Shibuya Crossing" data-search="Shibuya crossing Tokyo">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Shibuya Crossing <span class="jp-name">渋谷スクランブル交差点</span></h4>
+        <p class="lead">The world's busiest pedestrian crossing — up to 3,000 people cross in a single light cycle, 2.4 million per day.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>Five streets converge here in a "scramble" crossing where every direction stops for pedestrians at once. It became globally iconic via <em>Lost in Translation</em> (2003) and dozens of Hollywood films since. Across the street, the <strong>Hachiko statue</strong> commemorates the most loyal dog in Japanese history — an Akita who came to Shibuya Station every day for 9 years and 9 months waiting for his deceased owner Professor Ueno.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Best viewpoints</span>
+          <ul>
+            <li><strong>Shibuya Sky</strong> (top of Scramble Square, opened 2019) — open-air rooftop deck with the best Tokyo skyline view, with Fuji on clear days</li>
+            <li><strong>Starbucks Tsutaya</strong> — second-floor window, free with a coffee, classic photo spot</li>
+            <li><strong>Mag's Park</strong> — rooftop of Shibuya 109 with crossing view, less touristy</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>Cross it at night when neon billboards are at max. Then visit Hachiko — kids respond to the story. <strong>Shibuya Sky</strong> has a tilted glass observation rim where you can lie back and look at sky — kids will love the photo.</p>
+        </div>
+
+        <div class="detail-block food">
+          <span class="detail-label">🍜 Eat here</span>
+          <p><strong>Uobei sushi</strong> in Shibuya — conveyor sushi with iPad ordering, ¥130 per plate. The Bunkamura Dogenzaka area has good izakaya. For dessert: <strong>Magnet by Shibuya 109</strong> for crepes.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 1–2 hrs</span>
+          <span class="info-item">💰 Free (Sky ¥2500)</span>
+          <span class="info-item">🚇 Shibuya Stn</span>
+          <span class="info-item">🌙 Best at night</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+    <div class="place" data-wiki="Harajuku" data-search="Harajuku Takeshita street">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Harajuku & Takeshita Street <span class="jp-name">原宿</span></h4>
+        <p class="lead">Tokyo's youth fashion epicenter since the 1970s — a 400m candy-colored alley your tweens will lose their minds over.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>Takeshita Street became a teen-fashion mecca in the 1970s when boutiques selling foreign and avant-garde clothing first opened. By the 1990s–2000s it birthed the "Harajuku Girls" phenomenon — wild colorful fashion subcultures (Lolita, Decora, Gyaru). Today it's tamer but still the densest concentration of kawaii (cute) culture on Earth.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Don't miss</span>
+          <ul>
+            <li><strong>Totti Candy Factory</strong> — rainbow cotton candy the size of a basketball</li>
+            <li><strong>Daiso Harajuku</strong> — massive 100-yen shop</li>
+            <li><strong>Kiddy Land</strong> on Omotesando — 5 floors of Japanese toys, Pokemon, Hello Kitty, Studio Ghibli</li>
+            <li><strong>Cat Street</strong> — quieter back lane connecting Harajuku to Shibuya, edgier shops</li>
+            <li><strong>Omotesando</strong> — the "Champs-Élysées of Tokyo," high fashion and architecture</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>Your 9-year-old daughter will <em>especially</em> love this stretch. Plan for 2 hours minimum. Saturdays the street is shoulder-to-shoulder; go on a weekday morning.</p>
+        </div>
+
+        <div class="detail-block food">
+          <span class="detail-label">🍜 Eat here</span>
+          <p>Crepes are the signature food: <strong>Marion Crepes</strong> (since 1976) or <strong>Santa Monica Crepes</strong>. For lunch: <strong>Afuri Ramen</strong> (yuzu-citrus broth, milder for kids). For instagram cuteness: <strong>Sweet XO Good Grief</strong> rainbow cheesecake.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 2 hrs</span>
+          <span class="info-item">💰 Snacks ¥500–1500</span>
+          <span class="info-item">🚇 Harajuku Stn</span>
+          <span class="info-item">⚠️ Avoid weekends</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+    <div class="place" data-wiki="Meiji Shrine" data-search="Meiji Shrine Tokyo">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Meiji Shrine <span class="jp-name">明治神宮</span></h4>
+        <p class="lead">A sprawling forest shrine dedicated to Emperor Meiji — total tranquility just 100m from Harajuku's chaos.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>Built in 1920 to honor Emperor Meiji (whose reign ended Japan's 250-year isolation and propelled it into the modern age) and Empress Shōken. Destroyed by US air raids in 1945, rebuilt 1958. The surrounding 70-hectare forest was planted from scratch — <strong>100,000 trees donated from across Japan and Korea</strong>, designed by foresters to evolve into a self-sustaining "eternal" forest over 100 years. It now reads as ancient woodland in the center of Tokyo.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Look for</span>
+          <ul>
+            <li><strong>Massive cypress torii gates</strong> — the wood is 1,500 years old, from Taiwan</li>
+            <li><strong>Sake barrels</strong> — donated by every major sake brewer in Japan</li>
+            <li><strong>French wine barrels</strong> facing them — from Burgundy, honoring Emperor Meiji's love of European wine</li>
+            <li><strong>Wedding processions</strong> — Sunday mornings often have traditional Shinto weddings</li>
+            <li><strong>Ema</strong> — wooden prayer plaques hung around the shrine, you can buy one and write a wish</li>
+          </ul>
+        </div>
+
+        <div class="detail-block food">
+          <span class="detail-label">🍜 Eat here</span>
+          <p>The shrine itself has nothing — eat in Harajuku before/after. For something close: <strong>Café Mori no Terrace</strong> just outside the main gate, blends into the forest.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 1.5 hrs</span>
+          <span class="info-item">💰 Free</span>
+          <span class="info-item">🚇 Harajuku Stn</span>
+          <span class="info-item">🕐 Sunrise–sunset</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+    <div class="place" data-wiki="Yoyogi Park" data-search="Yoyogi Park cherry blossoms">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Yoyogi Park <span class="jp-name">代々木公園</span></h4>
+        <p class="lead">One of Tokyo's largest parks and the center of its hanami (cherry blossom viewing) culture.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>The land here has had many lives — Imperial Japanese Army parade grounds, US Army housing after WW2, the Olympic Village for the 1964 Tokyo Olympics, and a park since 1967. 134 acres, 600+ cherry trees. On weekends it hosts everything from rockabilly dance circles to capoeira classes to amateur bands.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Look for</span>
+          <ul>
+            <li><strong>Rockabilly dancers</strong> — at the park's main entrance Sunday afternoons</li>
+            <li><strong>Cosplay gatherings</strong> — random Sundays, anime fans in elaborate costumes</li>
+            <li><strong>NHK Hall</strong> & <strong>Tokyo Camii mosque</strong> nearby</li>
+          </ul>
+        </div>
+
+        <div class="detail-block food">
+          <span class="detail-label">🍜 Eat here</span>
+          <p>Picnic from a 7-Eleven or Lawson — <strong>onigiri</strong> rice balls, <strong>karaage</strong> fried chicken, and bento boxes are all under ¥500 and surprisingly excellent. This is what locals do for hanami.</p>
+        </div>
+
+        <div class="detail-block photo">
+          <span class="detail-label">📸 Photo spot</span>
+          <p>The central walkway under the cherry tunnel in full bloom is iconic. For something unique: the fountain plaza on the south end at golden hour.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 1–2 hrs</span>
+          <span class="info-item">💰 Free</span>
+          <span class="info-item">🚇 Harajuku/Yoyogi Stn</span>
+          <span class="info-item">🌸 Peak hanami spot</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="day-header">
+    <span class="day-label">Day 4 · Theme Park</span>
+    <h3>Tokyo DisneySea</h3>
+  </div>
+  <div class="places">
+
+    <div class="place" data-wiki="Tokyo DisneySea" data-search="Tokyo DisneySea">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Tokyo DisneySea <span class="jp-name">東京ディズニーシー</span></h4>
+        <p class="lead">The only DisneySea park in the world — and consistently rated one of the best Disney parks anywhere.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>Opened in 2001, designed entirely around water and exploration themes. Seven uniquely-themed "ports" rather than traditional Disney "lands." More mature and detailed than Disneyland — perfect for ages 9 and up, who'll appreciate the cinematic immersion. <strong>Fantasy Springs</strong>, a massive new area added in 2024, has Frozen, Tangled, and Peter Pan attractions.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Best of the 7 ports</span>
+          <ul>
+            <li><strong>Mediterranean Harbor</strong> — entrance area, gondolas, Mediterranean town built on water</li>
+            <li><strong>Mysterious Island</strong> — inside a 50m active volcano, Jules Verne theme</li>
+            <li><strong>Mermaid Lagoon</strong> — indoor area, gentle rides, best for younger kids</li>
+            <li><strong>Arabian Coast</strong> — Aladdin's world, Sinbad ride (underrated)</li>
+            <li><strong>Lost River Delta</strong> — Aztec ruins, Indiana Jones ride, Tower of Terror nearby</li>
+            <li><strong>Port Discovery</strong> — retro-future, Aquatopia and Soaring rides</li>
+            <li><strong>Fantasy Springs</strong> (new 2024) — Frozen, Tangled, Peter Pan</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>For ages 9, 11, 12: prioritize <strong>Tower of Terror</strong>, <strong>Journey to the Center of the Earth</strong>, <strong>Soaring: Fantastic Flight</strong>, and the new <strong>Anna and Elsa's Frozen Journey</strong>. Buy <strong>Premier Access</strong> (Disney's paid line-skip, ~$15/ride) selectively for top picks to save 60–90min waits each.</p>
+        </div>
+
+        <div class="detail-block food">
+          <span class="detail-label">🍜 Park snacks worth it</span>
+          <p>Tokyo Disney is famous for its themed food: <strong>alien mochi</strong> (gooey little aliens in Port Discovery), <strong>chandu tail</strong> shrimp dumplings in Arabian Coast, <strong>gyoza dog</strong> in American Waterfront. Get the popcorn refill bucket — flavors include curry, garlic shrimp, milk chocolate, jalapeño.</p>
+        </div>
+
+        <div class="detail-block photo">
+          <span class="detail-label">📸 Photo spot</span>
+          <p>Mediterranean Harbor at sunset, with Mt. Prometheus (the volcano) erupting in the background. The nightly water show ("Believe! Sea of Dreams") closes the park.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ Full day (8am–9pm)</span>
+          <span class="info-item">💰 ¥10,900/adult, ¥6,500/child</span>
+          <span class="info-item">🚇 Maihama Stn + monorail</span>
+          <span class="info-item">📅 Buy date tix 2 mo ahead</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="day-header">
+    <span class="day-label">Day 5 · Day Trip</span>
+    <h3>Hakone — Mt. Fuji views</h3>
+  </div>
+  <div class="places">
+
+    <div class="place" data-wiki="Hakone" data-search="Hakone Lake Ashi">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Hakone <span class="jp-name">箱根</span></h4>
+        <p class="lead">A mountain hot-spring town 80 minutes from Tokyo, traversed by a circuit of trains, cable cars, ropeways, and pirate ships — all included in the Hakone Free Pass.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>Hakone has been a major hot-spring resort since the 9th century, popular with samurai who came to soak after battles. Today it's where Tokyoites escape on weekends for onsen. The full Hakone Loop is a one-day adventure using 5 different modes of transport in a single circuit.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 The full loop (counterclockwise)</span>
+          <ul>
+            <li><strong>1. Hakone-Yumoto</strong> — arrive by Odakyu Romancecar from Shinjuku (90 min)</li>
+            <li><strong>2. Hakone-Tozan switchback railway</strong> — zigzags up the mountainside, the only one of its kind in Japan</li>
+            <li><strong>3. Hakone Open-Air Museum</strong> (optional) — outdoor sculpture park with Picasso pavilion, kid-friendly play sculptures</li>
+            <li><strong>4. Cable car</strong> to Sounzan</li>
+            <li><strong>5. Hakone Ropeway</strong> to Owakudani — flies over a sulfur volcanic valley with steaming vents</li>
+            <li><strong>6. Owakudani</strong> — buy <strong>kuro-tamago</strong> (eggs boiled in sulfur water, turn black — supposedly each adds 7 years to your life)</li>
+            <li><strong>7. Ropeway down</strong> to Lake Ashi</li>
+            <li><strong>8. Pirate ship</strong> across Lake Ashi — full-scale reproduction galleon with Mt. Fuji views</li>
+            <li><strong>9. Hakone Shrine</strong> — the iconic red torii standing in the lake</li>
+            <li><strong>10. Bus back</strong> to Hakone-Yumoto, train back to Tokyo</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>Five modes of transport in one day is a kids' dream — the pirate ship and ropeway in particular. The black eggs are unforgettable. If anyone gets tired, the Hakone Open-Air Museum has playable sculptures designed for kids.</p>
+        </div>
+
+        <div class="detail-block photo">
+          <span class="detail-label">📸 Photo spot</span>
+          <p>The iconic <strong>Hakone Shrine torii in Lake Ashi</strong> — the gate stands knee-deep in the water with Mt. Fuji behind. From Motohakone-ko port, walk south 5 minutes. Best in early morning.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ Full day</span>
+          <span class="info-item">💰 ¥6,100 Free Pass (~$43)</span>
+          <span class="info-item">🚇 Shinjuku → Romancecar</span>
+          <span class="info-item">☁️ Check Fuji forecast AM</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+    <div class="place" data-wiki="Mount Fuji" data-search="Mount Fuji cherry blossoms">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Mt. Fuji <span class="jp-name">富士山</span></h4>
+        <p class="lead">Japan's tallest mountain (3,776m) and one of the most photographed mountains on Earth.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>An active stratovolcano, last erupted in 1707–1708. Sacred since prehistory — pilgrims have climbed it for over 1,000 years. The first non-Japanese to summit was British envoy Sir Rutherford Alcock in 1860. In late March/early April it's still fully snow-capped, a striking contrast to the cherry blossoms below.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Best views</span>
+          <ul>
+            <li><strong>Lake Ashi</strong> (Hakone) — water + Fuji + Hakone Shrine torii</li>
+            <li><strong>Chureito Pagoda</strong> (Fujiyoshida) — the iconic five-story pagoda with Fuji + sakura shot</li>
+            <li><strong>Lake Kawaguchi</strong> — closest of the Fuji Five Lakes, mirror reflections</li>
+            <li><strong>Shinkansen window</strong> — between Tokyo and Kyoto, around Shin-Fuji station (sit on the right going west)</li>
+          </ul>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">⚠️ Fuji is shy</span>
+          <p>The mountain is visible only about 30% of days on average — best chance is early morning in winter and early spring. Check <em>livecameras.jp</em> the morning of your trip.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">👀 Best Nov–April</span>
+          <span class="info-item">🌅 Clearest at dawn</span>
+          <span class="info-item">📍 Hakone vantage point</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="day-header">
+    <span class="day-label">Day 6 · Future Tokyo</span>
+    <h3>Ueno Park & teamLab Planets</h3>
+  </div>
+  <div class="places">
+
+    <div class="place" data-wiki="Ueno Park" data-search="Ueno Park cherry blossoms">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Ueno Park <span class="jp-name">上野公園</span></h4>
+        <p class="lead">Tokyo's biggest cultural park and arguably its most famous hanami spot — 1,000+ cherry trees over 133 hectares.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>The land was originally a temple complex (Kan'ei-ji) destroyed in the 1868 Battle of Ueno during the Boshin War, when imperial forces ended the samurai era. Cherry trees were planted in the 17th century specifically to attract people for hanami. Today it hosts the city's biggest sakura crowds.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Inside the park</span>
+          <ul>
+            <li><strong>Tokyo National Museum</strong> — Japan's #1 museum, samurai armor and swords</li>
+            <li><strong>National Museum of Western Art</strong> — UNESCO site, designed by Le Corbusier; Monets, Rodins</li>
+            <li><strong>Ueno Zoo</strong> — Japan's oldest, home to giant pandas (Xiang Xiang line)</li>
+            <li><strong>Shinobazu Pond</strong> — lotus-covered, with a small island shrine</li>
+            <li><strong>Toshogu Shrine</strong> — gilded shrine to Tokugawa Ieyasu, often overlooked</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>If you're going to do one museum: the <strong>Tokyo National Museum's samurai gallery</strong> in the Honkan building is gold for kids ages 9+. The zoo is fine but Tokyo's zoo aesthetic is dated.</p>
+        </div>
+
+        <div class="detail-block photo">
+          <span class="detail-label">📸 Photo spot</span>
+          <p>The central <strong>Sakura-dori path</strong> in full bloom — a pink tunnel a quarter-mile long.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 2–3 hrs</span>
+          <span class="info-item">💰 Park free; museums ¥1000+</span>
+          <span class="info-item">🚇 Ueno Stn</span>
+          <span class="info-item">🌸 Peak hanami</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+    <div class="place" data-search="teamLab Planets Tokyo immersive art" data-no-wiki="copyright">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>teamLab Planets <span class="jp-name">チームラボプラネッツ</span></h4>
+        <p class="lead">Walk-through digital art museum where you wade barefoot through projected koi-filled water, get lost in infinity mirror rooms, and lie back in a sea of moving light.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>teamLab is a Tokyo-based collective of programmers, animators, mathematicians, and designers. <strong>Planets</strong> (opened 2018, expanded 2023) is one of two teamLab venues in Tokyo — distinguished from teamLab Borderless by being more "immersive" (you walk through water, climb on things) rather than just visual.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Best installations</span>
+          <ul>
+            <li><strong>Drawing on the Water Surface</strong> — wade thigh-deep through water with thousands of projected koi swimming around you, reacting to your movement</li>
+            <li><strong>Floating Flower Garden</strong> — 13,000+ live orchids hang from the ceiling, lifting up as you walk under</li>
+            <li><strong>Infinity Crystal Universe</strong> — mirror room with LED lights extending forever in all directions</li>
+            <li><strong>Soft Black Hole</strong> — bouncy floor where you sink and roll</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>You'll get wet up to your knees — bring shorts or rolled-up pants. Lockers and towel rentals available. About 1.5 hours one-way through the venue. <strong>Book online 2+ weeks in advance</strong> — sells out fast.</p>
+        </div>
+
+        <div class="detail-block photo">
+          <span class="detail-label">📸 Photo spot</span>
+          <p>Phones encouraged. The Infinity Crystal Universe is the iconic Instagram shot. The orchid garden makes for soft portrait lighting.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 1.5–2 hrs</span>
+          <span class="info-item">💰 ¥4,200/adult, ¥1,000/child</span>
+          <span class="info-item">🚇 Shin-Toyosu Stn</span>
+          <span class="info-item">👕 Bring shorts</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+    <div class="place" data-wiki="Odaiba" data-search="Odaiba Tokyo Gundam">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Odaiba <span class="jp-name">お台場</span></h4>
+        <p class="lead">A futuristic artificial island in Tokyo Bay — built originally as 1850s coastal defense forts, today a sci-fi waterfront.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>The "daiba" (forts) here were built in 1853 after Commodore Perry's "Black Ships" arrived demanding Japan open to trade. Today the island is reclaimed land hosting malls, museums, and Tokyo's most prominent geek landmark: a life-size Gundam.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Don't miss</span>
+          <ul>
+            <li><strong>Unicorn Gundam Statue</strong> — life-size 19.7m statue outside DiverCity Plaza, transforms at 11am, 1pm, 3pm, 5pm + light show after dark</li>
+            <li><strong>Rainbow Bridge</strong> — best skyline view from Odaiba Seaside Park</li>
+            <li><strong>Miraikan</strong> (science museum) — hands-on, includes ASIMO demos and a 6m animated globe</li>
+            <li><strong>Aqua City Statue of Liberty</strong> — yes, there's a Statue of Liberty replica here</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>Time your visit to a Gundam transformation. Boys 9–12 will <em>not believe</em> what they're seeing. teamLab Planets is a 10-minute walk away — pair them.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 2 hrs</span>
+          <span class="info-item">💰 Free to walk</span>
+          <span class="info-item">🚇 Yurikamome line</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ KYOTO ============ -->
+<section id="kyoto" class="city">
+  <h2>Kyoto <span class="jp">京都</span> <span class="nights">6 nights</span></h2>
+  <p class="intro">The cultural soul of Japan. Capital from 794 to 1868 AD — 1,074 years. The city has 1,600 Buddhist temples, 400 Shinto shrines, 14 UNESCO World Heritage sites, and 5 active geisha districts. Slower than Tokyo, more walkable. Base around Gion or downtown Kawaramachi.</p>
+
+  <div class="day-header">
+    <span class="day-label">Day 7 · Arrive Kyoto</span>
+    <h3>Shinkansen + evening Gion stroll</h3>
+  </div>
+  <div class="places">
+
+    <div class="place" data-wiki="Gion" data-search="Gion Kyoto geisha">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Gion <span class="jp-name">祇園</span></h4>
+        <p class="lead">Kyoto's 400-year-old geisha district — wooden machiya houses, lantern-lit streets, and the slim chance of spotting a maiko hurrying between teahouses at dusk.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>Gion started in the medieval period as a place for travelers to rest before visiting Yasaka Shrine. By the Edo period it had become Kyoto's premier entertainment district, with <em>ochaya</em> (teahouses) where geisha entertained samurai and merchants. Today about <strong>180 geiko</strong> (Kyoto's term for geisha) and <strong>maiko</strong> (apprentices, age 15–20) still work here.</p>
+          <p>A maiko trains for 5 years before becoming a full geiko. The kimono, hair, makeup, and dance training is among the most rigorous artistic disciplines in the world.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Walk this route</span>
+          <ul>
+            <li><strong>Hanami-koji</strong> — the iconic main street, lantern-lit lanes of <em>ochaya</em></li>
+            <li><strong>Shirakawa area</strong> — narrow stone bridges over the Shirakawa stream, dramatic willows</li>
+            <li><strong>Kennin-ji</strong> — Kyoto's oldest Zen temple (1202), often nearly empty</li>
+            <li><strong>Yasaka Shrine</strong> — at the east end, free and beautiful at night</li>
+          </ul>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">⚠️ Etiquette</span>
+          <p>Strict rules now: <strong>no photographing geisha</strong> in private alleys; tourists were harassing maiko. Side streets off Hanami-koji are now off-limits to non-residents with ¥10,000 fines. Stick to Hanami-koji and main streets.</p>
+        </div>
+
+        <div class="detail-block food">
+          <span class="detail-label">🍜 Eat here</span>
+          <p>Gion has Michelin-starred kaiseki ($300+/person, reservation only) but also good casual: <strong>Gion Kappa</strong> (yakitori), <strong>Gion Karyo</strong> (mid-range kaiseki). For tea + sweets: <strong>Tsujiri</strong> at the Hanami-koji corner, world-class matcha desserts.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 1–2 hrs</span>
+          <span class="info-item">💰 Free</span>
+          <span class="info-item">🚇 Gion-Shijo Stn</span>
+          <span class="info-item">🌙 Best at dusk</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+    <div class="place" data-wiki="Pontocho" data-search="Pontocho Kyoto alley">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Pontocho Alley <span class="jp-name">先斗町</span></h4>
+        <p class="lead">A narrow lantern-lit alley between Kamogawa river and Kiyamachi street — Kyoto's most atmospheric dinner street.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>Pontocho was established in 1670 along reclaimed riverbank, originally as a geisha district. The name comes from the Portuguese "ponto" (point). Today it's lined with hundreds of restaurants from kaiseki splurges to standing bars. In summer (May–September) many restaurants build <em>kawayuka</em> wooden platforms over the river for outdoor dining.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Look for</span>
+          <ul>
+            <li><strong>The chidori bird crest</strong> — small plover symbol marking traditional Pontocho establishments</li>
+            <li><strong>Numbered lanterns</strong> — each restaurant has a number on its lantern</li>
+            <li>The <strong>Kamogawa riverbank</strong> just below — peak sakura in season, people sitting equidistantly apart (the famous "Kamogawa equal-spacing" phenomenon)</li>
+          </ul>
+        </div>
+
+        <div class="detail-block food">
+          <span class="detail-label">🍜 Eat here</span>
+          <p>For family-friendly: <strong>Kyoto Pontocho Robata</strong> (open grill, fun for kids), <strong>Pontocho Misoguigawa</strong> (French-Japanese fusion). Most places require reservations — book 2+ weeks ahead for sakura week. <strong>Yagenbori</strong> is a more affordable izakaya option.</p>
+        </div>
+
+        <div class="detail-block photo">
+          <span class="detail-label">📸 Photo spot</span>
+          <p>Looking down the alley from the south entrance just after sunset, lanterns glowing. The Kamogawa river at sakura time, from <strong>Sanjo Bridge</strong>.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ Dinner (1.5–2 hrs)</span>
+          <span class="info-item">💰 ¥4000–15000+/person</span>
+          <span class="info-item">🚇 Sanjo Stn</span>
+          <span class="info-item">📅 Reserve ahead!</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="day-header">
+    <span class="day-label">Day 8 · Iconic Kyoto</span>
+    <h3>Fushimi Inari & Tofuku-ji</h3>
+  </div>
+  <div class="places">
+
+    <div class="place" data-wiki="Fushimi Inari-taisha" data-search="Fushimi Inari shrine torii">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Fushimi Inari Shrine <span class="jp-name">伏見稲荷大社</span></h4>
+        <p class="lead">10,000 orange torii gates climbing a sacred mountain — Japan's most photographed shrine and the symbol of Kyoto.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>Founded in 711 AD, this is the head shrine of all 30,000 Inari shrines in Japan. Inari is the Shinto god of rice, sake, prosperity, and (by extension) business. Each torii gate was donated by an individual or business — small ones cost ~¥400,000 ($3,000), large ones up to ¥1.3 million ($10,000+). New gates are added constantly as old ones decay.</p>
+          <p>The white fox statues are <em>kitsune</em> — messengers of Inari, often shown holding keys to rice granaries or jewels in their mouths.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 What to do</span>
+          <ul>
+            <li>Climb to the <strong>Yotsutsuji intersection</strong> (about 45 min up) — view of all Kyoto</li>
+            <li>Full summit loop is 4km / 2–3 hrs round trip — surprisingly doable for kids</li>
+            <li><strong>Senbon Torii</strong> (Thousand Torii Gates) — the most iconic tunnel section, near the bottom</li>
+            <li>Side trails to small fox shrines hidden in the forest</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>The orange tunnel is genuinely magical. Make it a hike challenge — climb to Yotsutsuji and they earn a snack at the summit tea house. Buy a fox-face cookie (kitsune senbei) at one of the stalls near the entrance.</p>
+        </div>
+
+        <div class="detail-block food">
+          <span class="detail-label">🍜 Eat here</span>
+          <p>The street leading to the shrine has stalls selling <strong>inari-zushi</strong> (rice in sweet fried tofu pouches — named after the shrine) and <strong>kitsune udon</strong> (fox noodles — udon with fried tofu, named the same way). <strong>Vermillion Café</strong> at the summit is a hidden gem with rare bamboo-grove views.</p>
+        </div>
+
+        <div class="detail-block photo">
+          <span class="detail-label">📸 Photo spot</span>
+          <p>Most tourists stop at Senbon Torii (Thousand Gates) and turn around — meaning that 15 minutes further up the trail you'll have empty tunnels mostly to yourself.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 2–4 hrs</span>
+          <span class="info-item">💰 Free</span>
+          <span class="info-item">🚇 JR Inari Stn</span>
+          <span class="info-item">⏰ Arrive 7am or after 5pm</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+    <div class="place" data-wiki="Tōfuku-ji" data-search="Tofukuji temple Kyoto">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Tōfuku-ji <span class="jp-name">東福寺</span></h4>
+        <p class="lead">One of Kyoto's "Five Great Zen Temples" — famous for its modernist rock gardens and the dramatic Tsutenkyo Bridge.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>Founded in 1236, deliberately named to invoke both <strong>Tō</strong>daiji (the Buddha temple in Nara) and Kō<strong>fuku</strong>-ji (also in Nara). The compound's design draws from both. The current Hojo (abbot's hall) gardens were designed in 1939 by Mirei Shigemori — radical for fusing traditional Japanese garden elements with modernist geometry. The four gardens represent the four seasons.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Look for</span>
+          <ul>
+            <li><strong>Tsutenkyo Bridge</strong> ("Bridge to Heaven") — covered wooden bridge over a maple-filled ravine</li>
+            <li><strong>The four Hojo gardens</strong> — north garden has a famous checkerboard moss pattern</li>
+            <li><strong>Sanmon Gate</strong> — Japan's oldest standing Zen temple gate (1425), 22m tall</li>
+          </ul>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">🍁 Off-peak gem</span>
+          <p>Famous in autumn (maple foliage) but mostly empty during sakura season — perfect quiet stop on the way back from Fushimi Inari (one train stop away).</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 1 hr</span>
+          <span class="info-item">💰 ¥500/adult</span>
+          <span class="info-item">🚇 Tōfukuji Stn</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="day-header">
+    <span class="day-label">Day 9 · West Kyoto</span>
+    <h3>Arashiyama</h3>
+  </div>
+  <div class="places">
+
+    <div class="place" data-wiki="Arashiyama" data-search="Arashiyama bamboo grove Kyoto">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Arashiyama Bamboo Grove <span class="jp-name">嵐山竹林</span></h4>
+        <p class="lead">A 500-meter walk through 50-meter-tall moso bamboo — listed by the Japanese government as one of "100 Soundscapes of Japan" for the way wind makes the forest creak and sing.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>The bamboo here is the <em>moso</em> species, which can grow up to 1 meter per day during the growing season. Some shoots emerge from the ground and reach full 25m height in just 90 days. The grove has been cultivated for centuries — bamboo from Arashiyama traditionally supplies the highest-quality tea ceremony utensils and chopsticks.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Tips</span>
+          <ul>
+            <li>The grove is <strong>500m long</strong> — short walk, big impact</li>
+            <li>Arrive by <strong>7am</strong> to have it nearly to yourself; by 10am it's packed shoulder-to-shoulder</li>
+            <li>The grove path actually <strong>exits behind Tenryū-ji temple</strong> — combine them</li>
+            <li>Light filters down in shafts; on windy days the sound is like the whole forest is humming</li>
+          </ul>
+        </div>
+
+        <div class="detail-block photo">
+          <span class="detail-label">📸 Photo spot</span>
+          <p>Looking straight up — the bamboo canopy converging far overhead. The classic shot is the path angle from the south entrance.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 30 min (the grove itself)</span>
+          <span class="info-item">💰 Free</span>
+          <span class="info-item">🚇 Saga-Arashiyama Stn</span>
+          <span class="info-item">⏰ Go at dawn</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+    <div class="place" data-wiki="Tenryū-ji" data-search="Tenryuji temple garden Arashiyama">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Tenryū-ji <span class="jp-name">天龍寺</span></h4>
+        <p class="lead">A UNESCO World Heritage Zen temple with what is widely considered Japan's oldest unchanged garden — designed 700 years ago and still in its original layout.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>Built in 1339 by shogun Ashikaga Takauji to honor Emperor Go-Daigo, his former enemy. The funds came from a single trading mission to China — a fascinating piece of medieval diplomacy. The <strong>Sogenchi Garden</strong> uses Mt. Arashiyama as <em>shakkei</em> ("borrowed scenery"), where the surrounding landscape becomes part of the composition. The garden has never been redesigned since 1345.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Don't miss</span>
+          <ul>
+            <li>Sit on the wooden veranda of the <strong>Hojo</strong> (abbot's hall) and contemplate the pond garden — designed to be seen from this exact angle</li>
+            <li><strong>Cloud Dragon ceiling painting</strong> in the Hatto hall (open weekends + special periods)</li>
+            <li>Walk through to the <strong>back garden exit</strong> — leads directly into the bamboo grove</li>
+          </ul>
+        </div>
+
+        <div class="detail-block food">
+          <span class="detail-label">🍜 Eat here</span>
+          <p>Tenryū-ji has its own restaurant — <strong>Shigetsu</strong> serves <em>shojin ryori</em>, traditional Zen Buddhist vegetarian cuisine. Multi-course, simple, beautiful. ¥3500–7500. Reservation required.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 1 hr</span>
+          <span class="info-item">💰 ¥500 garden / ¥800 + temple</span>
+          <span class="info-item">🌸 Excellent sakura</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+    <div class="place" data-wiki="Iwatayama Monkey Park" data-search="Arashiyama Monkey Park Iwatayama">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Iwatayama Monkey Park <span class="jp-name">嵐山モンキーパーク</span></h4>
+        <p class="lead">A 20-minute uphill hike to a hilltop sanctuary where 120 wild Japanese macaques roam free — and humans stand inside a cage to feed them.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>The macaques here are wild — researchers started feeding them in 1956 to study their behavior, and they've stayed connected to the park ever since. These are <em>Macaca fuscata</em>, the same species as the famous "snow monkeys" of Nagano (though these aren't snow-bathers). On a clear day you can see all of Kyoto from the top.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 The experience</span>
+          <ul>
+            <li>20-minute uphill climb (steep in parts) — kids do fine, grandparents may struggle</li>
+            <li>At the top: an open mountain meadow with monkeys roaming everywhere</li>
+            <li><strong>You go inside the cage</strong> to feed them — fruit and peanuts handed through wire mesh (¥100/pack)</li>
+            <li>Don't make eye contact, don't smile (shows teeth = aggression), don't approach babies</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>Probably the most memorable single thing in Kyoto for your kids. They'll talk about it forever. Important: <strong>don't bring food into the open area</strong> — only inside the cage. Monkeys will mug you.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 2 hrs (incl. hike)</span>
+          <span class="info-item">💰 ¥600/adult, ¥300/child</span>
+          <span class="info-item">🥾 Steep uphill</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+    <div class="place" data-wiki="Togetsukyō Bridge" data-search="Togetsukyo bridge Arashiyama">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Togetsukyo Bridge <span class="jp-name">渡月橋</span></h4>
+        <p class="lead">"The Moon-Crossing Bridge" — the iconic photograph of Arashiyama, with mountains rising directly from the river on the far side.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>The original bridge dates to 836 AD. Emperor Kameyama (13th century) named it after watching the moon appear to cross the bridge as it rose. Current structure is a 1934 reconstruction in traditional wooden style — but designed with hidden modern steel reinforcement.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 What to do</span>
+          <ul>
+            <li>Walk across — better views looking <em>back</em> at the bridge from the north side</li>
+            <li>Rent a <strong>rowboat</strong> from the dock (¥1,500/hr) — drift upstream into the gorge</li>
+            <li>Watch for <strong>cormorant fishing demonstrations</strong> on summer evenings</li>
+          </ul>
+        </div>
+
+        <div class="detail-block photo">
+          <span class="detail-label">📸 Photo spot</span>
+          <p>Walk down to the river's edge on the north bank — the bridge curves over the water with the mountain forest behind. At sakura time, cherry trees frame both sides.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 30 min</span>
+          <span class="info-item">💰 Free</span>
+          <span class="info-item">🌸 Mountain sakura backdrop</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="day-header">
+    <span class="day-label">Day 10 · Day Trip</span>
+    <h3>Nara — deer + giant Buddha</h3>
+  </div>
+  <div class="places">
+
+    <div class="place" data-wiki="Nara, Nara" data-search="Nara Park deer Japan">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Nara Park <span class="jp-name">奈良公園</span></h4>
+        <p class="lead">Japan's first permanent capital (710 AD) — home to 1,200 free-roaming sacred deer that have learned to bow for crackers.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>In 710 AD the Imperial Court moved here from Asuka, making Nara Japan's first true capital city. Buddhism became the state religion under Emperor Shomu, and Nara became a major center of culture. After only 74 years, the capital moved to Kyoto (in part because the Buddhist clergy had become too politically powerful), but the temples remained.</p>
+          <p>The deer are considered sacred in Shinto — <strong>messengers of the gods</strong>. Until 1637, killing a deer in Nara was punishable by death. Today they're a protected species, technically wild, and have evolved to bow to humans for treats.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 What to do</span>
+          <ul>
+            <li>Buy <strong>shika-senbei</strong> (deer crackers) from a vendor — ¥200/pack, sold throughout the park</li>
+            <li>Visit <strong>Todai-ji</strong> for the giant Buddha (separate listing below)</li>
+            <li><strong>Kasuga Taisha</strong> — shrine with 3,000 stone lanterns lining its paths</li>
+            <li><strong>Mt. Wakakusa</strong> — grassy hill, easy 30 min hike, panoramic view</li>
+            <li><strong>Naramachi</strong> — old merchant district, beautifully preserved machiya houses</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>Buy crackers <strong>one pack at a time</strong> and feed quickly — the deer can be aggressive once they smell food. Some will headbutt or chase you. <strong>Don't hide crackers in pockets</strong> — they will find them. If a child is scared, pick them up.</p>
+        </div>
+
+        <div class="detail-block food">
+          <span class="detail-label">🍜 Eat here</span>
+          <p><strong>Nakatanidou</strong> (mochi pounding) — they pound mochi by hand with a giant wooden mallet at terrifying speed (every ~30 min throughout the day, free to watch). Get the <em>yomogi mochi</em> after. For lunch: <strong>Tsukihitei</strong> deep in the forest, ¥10000+ kaiseki splurge, or casual: <strong>Ten Ten Café</strong>.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ Half day from Kyoto</span>
+          <span class="info-item">💰 Park free; temples ¥600/each</span>
+          <span class="info-item">🚇 45 min by JR from Kyoto</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+    <div class="place" data-wiki="Tōdai-ji" data-search="Todaiji Great Buddha Nara">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Tōdai-ji & the Great Buddha <span class="jp-name">東大寺・大仏</span></h4>
+        <p class="lead">One of the world's largest wooden buildings, housing a 15-meter, 500-ton bronze Buddha cast in 752 AD.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>Emperor Shomu ordered Todai-ji built in 738 after a smallpox epidemic — the Buddha was supposed to bring peace and protection to the realm. Casting the bronze Buddha took 2.6 million people working 8 years; nearly all of Japan's copper supply went into it. The 50,000-person dedication ceremony in 752 was one of the largest gatherings in pre-modern Japanese history.</p>
+          <p>The Daibutsuden (Great Buddha Hall) has been destroyed twice by fire. The current hall, completed in 1709, is <strong>two-thirds the size of the original</strong> — and still the largest wooden building in the world.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Look for</span>
+          <ul>
+            <li>The <strong>Buddha's bronze lotus petals</strong> — engraved with detailed cosmologies</li>
+            <li><strong>Two giant Niō (guardian) statues</strong> at the Nandaimon gate — 8.4m tall, carved 1203 by Unkei</li>
+            <li>The <strong>pillar with a hole</strong> at the back-right of the Daibutsuden — same size as the Buddha's nostril; crawling through is said to grant enlightenment in the next life</li>
+            <li><strong>The Bishamonten and Komokuten</strong> guardian statues flanking the Buddha</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>The <strong>Buddha's nostril hole</strong> is a famous kid challenge — your 9-year-old will likely fit easily; the 11-year-old can probably squeeze through; the 12-year-old may not. There's almost always a line. Going through head-first, arms out.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 1.5 hrs</span>
+          <span class="info-item">💰 ¥600/adult</span>
+          <span class="info-item">🚇 Walk from Nara Park</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="day-header">
+    <span class="day-label">Day 11 · North Kyoto</span>
+    <h3>Golden Pavilion & Zen gardens</h3>
+  </div>
+  <div class="places">
+
+    <div class="place" data-wiki="Kinkaku-ji" data-search="Kinkakuji Golden Pavilion">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Kinkaku-ji (Golden Pavilion) <span class="jp-name">金閣寺</span></h4>
+        <p class="lead">A three-story Zen temple covered top to bottom in gold leaf, mirrored in a perfectly still pond.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>Originally built in 1397 as a retirement villa for shogun <strong>Ashikaga Yoshimitsu</strong> — converted into a Zen temple after his death. Each of the three floors is in a different architectural style: Shinden (palace) on bottom, Samurai-zukuri (warrior) in middle, Karayō (Chinese Zen) on top — symbolizing the unification of those three forces under Yoshimitsu.</p>
+          <p>In 1950 a deranged young monk named Hayashi Yoken set fire to the pavilion and destroyed it. He was sentenced to 7 years; his suicide attempt and the case were the basis for <strong>Yukio Mishima's novel <em>The Temple of the Golden Pavilion</em></strong> (1956). The temple was rebuilt 1955; the gold leaf was completely re-applied in 1987.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Look for</span>
+          <ul>
+            <li>The <strong>phoenix statue</strong> on top of the pavilion</li>
+            <li>The <strong>Mirror Pond</strong> (Kyoko-chi) — designed specifically to reflect the pavilion at all heights</li>
+            <li>Small <strong>"good luck" stone tablets</strong> tourists throw coins at on the path</li>
+            <li><strong>Sekka-tei tea house</strong> at the top of the garden path — usually overlooked</li>
+          </ul>
+        </div>
+
+        <div class="detail-block photo">
+          <span class="detail-label">📸 Photo spot</span>
+          <p>The first view as you turn the corner from the entrance is THE shot. Morning light makes the gold luminous. The path is one-way — no return for a second look. Bring a polarizing filter if you have one for the reflection.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 45 min</span>
+          <span class="info-item">💰 ¥500/adult</span>
+          <span class="info-item">🚇 Bus 101/205</span>
+          <span class="info-item">⏰ Go early morning</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+    <div class="place" data-wiki="Ryōan-ji" data-search="Ryoanji rock garden Kyoto">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Ryōan-ji <span class="jp-name">龍安寺</span></h4>
+        <p class="lead">The most famous Zen rock garden in the world: 15 stones, raked white gravel, and a puzzle no one has solved.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>The temple dates to 1450; the garden was created around 1500. The designer is unknown. The garden is just 248 square meters: 15 stones arranged in five groups (5-2-3-2-3) in white gravel raked daily by monks. From any angle you can see at most 14 of the 15 stones. To see all 15, the legend says, you must achieve enlightenment.</p>
+          <p>The meaning is fiercely debated. The official Zen line: "tora-no-ko-watashi" (tiger crossing — a mother tiger and cubs crossing a river). Other theories: the stones represent the islands of Japan, or major stars, or simply the impossibility of perfect knowledge. A 2002 mathematical study found that the stones map to a subtle "axis of symmetry" perceptible only subconsciously.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 How to experience it</span>
+          <ul>
+            <li>Sit on the wooden veranda — this is the only authorized viewing angle</li>
+            <li>Try to count all 15 from where you sit — you won't</li>
+            <li>Move slowly along the veranda; the composition shifts</li>
+            <li>Visit <strong>before 9am</strong> — by 10am, busloads arrive, ruining the silence</li>
+          </ul>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 45 min</span>
+          <span class="info-item">💰 ¥600/adult</span>
+          <span class="info-item">🚇 10 min walk from Kinkaku-ji</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+    <div class="place" data-wiki="Nijō Castle" data-search="Nijo Castle Kyoto">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Nijō Castle <span class="jp-name">二条城</span></h4>
+        <p class="lead">A 17th-century shogun's palace famous for its "nightingale floors" — wooden boards that chirp when walked on, an anti-assassin alarm system.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>Built 1603 as the Kyoto residence of <strong>Tokugawa Ieyasu</strong>, founder of the Tokugawa shogunate that ruled Japan for 265 years. Symbolically: the castle was built bigger than the Imperial Palace next door — sending an unmissable message about where real power lay. Ironically, it was also <em>here in 1867</em> that the 15th and last Tokugawa shogun returned power to the Emperor, ending the era.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Don't miss</span>
+          <ul>
+            <li><strong>Ninomaru Palace</strong> — 33 rooms with painted screens by the Kano school (you can walk through)</li>
+            <li><strong>Nightingale floors</strong> — the floor nails are designed to squeak with movement; impossible to walk silently</li>
+            <li><strong>Throne Room (Ohiroma)</strong> — where the shogun met daimyo lords; you can see the ceremonial arrangement</li>
+            <li><strong>Ninomaru Garden</strong> — by master gardener Kobori Enshu</li>
+            <li><strong>400+ cherry trees</strong> including late-blooming weeping varieties (yae-zakura)</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>The squeaking floors are a hit. Tell kids about ninja before going — they'll have fun trying (and failing) to walk silently. Castle is open to walk through interior — you'll go in your socks.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 1.5 hrs</span>
+          <span class="info-item">💰 ¥1300/adult, ¥400/child</span>
+          <span class="info-item">🚇 Nijojo-mae Stn</span>
+          <span class="info-item">🌸 Late sakura — early April</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="day-header">
+    <span class="day-label">Day 12 · East Kyoto</span>
+    <h3>Higashiyama & Philosopher's Path</h3>
+  </div>
+  <div class="places">
+
+    <div class="place" data-wiki="Philosopher's Walk" data-search="Philosopher's Path Kyoto sakura">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Philosopher's Path <span class="jp-name">哲学の道</span></h4>
+        <p class="lead">A 2km stone path along a canal lined with 400 cherry trees — the postcard image of Kyoto in sakura season.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>Named after philosopher <strong>Nishida Kitarō</strong> (1870–1945), founder of the influential Kyoto School of philosophy, who walked this path daily on his commute to Kyoto University, using the walk to meditate. The canal itself is part of the Lake Biwa Canal system, an 1890 engineering marvel that brought water and hydroelectric power 30km from Lake Biwa.</p>
+          <p>The 400 cherry trees were planted in 1922 by Japanese painter Hashimoto Kansetsu.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Along the way</span>
+          <ul>
+            <li><strong>Ginkaku-ji</strong> (Silver Pavilion) at the north end — never actually got its silver coating</li>
+            <li><strong>Honen-in temple</strong> — small, free, almost always empty</li>
+            <li><strong>Nyakuoji Shrine</strong> — quiet forest shrine</li>
+            <li>Tiny <strong>cafes and craft shops</strong> along side streets</li>
+          </ul>
+        </div>
+
+        <div class="detail-block photo">
+          <span class="detail-label">📸 Photo spot</span>
+          <p>In peak sakura, the entire path becomes a tunnel of pink reflected in the canal. Walk south-to-north (from Eikando temple to Ginkaku-ji). On windy days, falling petals coat the water — pink rivers.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 1.5–2 hrs</span>
+          <span class="info-item">💰 Free</span>
+          <span class="info-item">🚇 Bus to Ginkaku-ji-mae</span>
+          <span class="info-item">🌸 #1 sakura spot in Kyoto</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+    <div class="place" data-wiki="Higashiyama" data-search="Higashiyama Kyoto Ninenzaka Sannenzaka">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Higashiyama District <span class="jp-name">東山</span></h4>
+        <p class="lead">The most preserved old quarter of Kyoto — sloped cobblestone lanes lined with Edo-period wooden machiya houses, tea shops, and crafts.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>The streets <strong>Ninen-zaka</strong> ("two-year hill") and <strong>Sannen-zaka</strong> ("three-year hill") are over 1,000 years old, dating to the founding of nearby Kiyomizu-dera in 798 AD. The names come from old superstitions: if you trip on Ninen-zaka, you'll have 2 years of bad luck; on Sannen-zaka, 3 years. (Whether the steep slope and slippery cobblestones make this a real risk is up for debate.)</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Walking route</span>
+          <ul>
+            <li>Start at <strong>Yasaka Pagoda</strong> (Hokan-ji) — 5-story pagoda from 1440, iconic photo</li>
+            <li>Walk up <strong>Yasaka-dori</strong> with the pagoda framed at the end</li>
+            <li>Turn into <strong>Ninen-zaka</strong> → <strong>Sannen-zaka</strong> — cobblestone, shops</li>
+            <li>End at <strong>Kiyomizu-dera</strong> at the top</li>
+            <li>Best shops: <strong>Ippodo Tea</strong> (300-year-old tea house), <strong>Yatsuhashi</strong> (cinnamon mochi sweets), Studio Ghibli store, Snoopy Tea House</li>
+          </ul>
+        </div>
+
+        <div class="detail-block food">
+          <span class="detail-label">🍜 Eat here</span>
+          <p>Many small craft cafes — <strong>% Arabica Kyoto</strong> for excellent coffee, <strong>Saryo Tsujiri</strong> for matcha parfaits. Try <strong>yatsuhashi</strong> (Kyoto's signature sweet — cinnamon-rice-flour triangles, traditional or filled with bean paste).</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 2 hrs</span>
+          <span class="info-item">💰 Free walk; shops vary</span>
+          <span class="info-item">🚇 Bus to Kiyomizu-dera</span>
+          <span class="info-item">🛍 Best souvenir shopping</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+    <div class="place" data-wiki="Kiyomizu-dera" data-search="Kiyomizu-dera temple Kyoto">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Kiyomizu-dera <span class="jp-name">清水寺</span></h4>
+        <p class="lead">UNESCO temple perched on a 13-meter wooden stage built without nails — sweeping views over Kyoto.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>Founded in 778 AD by a monk who saw a vision near the Otowa waterfall. The name means "Pure Water Temple" after that waterfall. The main hall's wooden veranda juts out 13m over the hillside, supported by 78 wooden pillars driven into the slope — built in 1633, the entire structure uses zero nails. Until 1872, an old custom held that if you jumped off the stage and survived, your wish would come true (234 documented jumps, 85% survival rate, now strictly forbidden).</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Don't miss</span>
+          <ul>
+            <li>The <strong>main stage</strong> — view over all of Kyoto</li>
+            <li><strong>Jishu Shrine</strong> (behind the main hall) — has two "love stones" 18m apart; walk from one to the other with eyes closed for success in love. If you need help, it means you need help in love too.</li>
+            <li><strong>Otowa Waterfall</strong> — three streams; drink from one for longevity, success in love, or success in academics. Drinking from all three is greedy and brings no luck.</li>
+            <li><strong>Tainai-meguri</strong> (₹100) — totally dark underground passage representing Buddha's womb; navigate by holding a rope</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>The dark Tainai-meguri passage is creepy in a fun way — kids love it. Hold the rope, walk in pitch black through a series of small chambers, find a single lit stone, make a wish, exit.</p>
+        </div>
+
+        <div class="detail-block photo">
+          <span class="detail-label">📸 Photo spot</span>
+          <p>Visit late afternoon — climb the path from Higashiyama, see the main hall as the sun sets over Kyoto. The temple often does evening illuminations during sakura season.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 1.5 hrs</span>
+          <span class="info-item">💰 ¥400/adult, ¥200/child</span>
+          <span class="info-item">🚇 Bus to Kiyomizu-michi</span>
+          <span class="info-item">🌸 Sakura-framed view</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ OSAKA ============ -->
+<section id="osaka" class="city">
+  <h2>Osaka <span class="jp">大阪</span> <span class="nights">2 nights</span></h2>
+  <p class="intro">Japan's food capital — louder, brasher, friendlier than Tokyo. Osakans are famous for being funny, talkative, and direct (the opposite of Kyoto's reserved formality). The local dialect, Osaka-ben, is the language of Japanese comedy. Base in Namba near Dotonbori; KIX airport is 50 min away.</p>
+
+  <div class="day-header">
+    <span class="day-label">Day 13 · Osaka core</span>
+    <h3>Castle, Dotonbori, street food</h3>
+  </div>
+  <div class="places">
+
+    <div class="place" data-wiki="Osaka Castle" data-search="Osaka Castle cherry blossoms">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Osaka Castle <span class="jp-name">大阪城</span></h4>
+        <p class="lead">Originally built in 1583 by warlord Toyotomi Hideyoshi as his power base to unify Japan — destroyed and rebuilt multiple times, now a museum at the center of one of Osaka's largest parks.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>This castle is the symbol of one of Japanese history's most dramatic eras. <strong>Toyotomi Hideyoshi</strong>, a peasant who rose to rule Japan, built it in 1583 to outshine all other castles. After his death in 1598, his clan was crushed by Tokugawa Ieyasu in the legendary <strong>Siege of Osaka</strong> (1614–1615) — the battle that consolidated Tokugawa rule for 250 years.</p>
+          <p>The castle has burned and been rebuilt repeatedly. The current main tower is a 1931 reconstruction in concrete — with an elevator. The interior is an excellent modern museum about Hideyoshi and the unification of Japan: original armor, screens, holograms, and observation deck on top.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Don't miss</span>
+          <ul>
+            <li>The <strong>museum's 8th floor observation deck</strong> — best Osaka view</li>
+            <li><strong>Hideyoshi's golden tea room</strong> reconstruction inside</li>
+            <li><strong>3,000 cherry trees</strong> in the surrounding park — Osaka's top hanami spot</li>
+            <li><strong>Plum grove</strong> (Bairin) — east side of the castle, 1,200 plum trees</li>
+            <li>The <strong>Otemon gate</strong> — original 1628 structure, hand-cut massive stones</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>Inside the museum, kids can <strong>try on samurai armor and kimono</strong> for free (limited times per day) — great photo op. The castle's holograms and dioramas of the siege are kid-friendly.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 2 hrs</span>
+          <span class="info-item">💰 ¥600/adult, ¥free for kids</span>
+          <span class="info-item">🚇 Tanimachi 4-chome Stn</span>
+          <span class="info-item">🌸 Top Osaka sakura spot</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+    <div class="place" data-wiki="Dōtonbori" data-search="Dotonbori Osaka neon">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Dotonbori <span class="jp-name">道頓堀</span></h4>
+        <p class="lead">800m of canal-side neon, giant moving food signs, and street food — Osaka's most overwhelmingly fun strip.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>The Dotonbori canal was dug in 1612 by an entrepreneur named Yasui Doton, trying to make the area navigable. He died before finishing it — his cousins completed the work and named the canal after him. By the 1660s, the area was already a major entertainment district.</p>
+          <p>The famous <strong>Glico Running Man billboard</strong> has been here since 1935 — Japan's longest-running outdoor advertisement. The <strong>Kani Doraku</strong> giant moving crab sign dates to 1960.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Iconic signs</span>
+          <ul>
+            <li><strong>Glico Running Man</strong> — at the Ebisu Bridge; everyone takes the same photo</li>
+            <li><strong>Kani Doraku</strong> giant moving crab — 6m wide, claws move</li>
+            <li><strong>Kuidaore Taro</strong> — drum-beating clown statue, the unofficial mascot of Osaka</li>
+            <li><strong>Don Quijote Ferris wheel</strong> — yes, there's a Ferris wheel on the side of a discount store</li>
+            <li><strong>Tomato pig</strong>, giant gyoza, giant takoyaki — every restaurant has its own 3D billboard</li>
+          </ul>
+        </div>
+
+        <div class="detail-block food">
+          <span class="detail-label">🍜 Must eat (street food crawl style)</span>
+          <ul>
+            <li><strong>Takoyaki</strong> (octopus balls) — invented in Osaka in 1935. Try <strong>Wanaka</strong> or <strong>Kukuru</strong></li>
+            <li><strong>Okonomiyaki</strong> (savory pancake) — try <strong>Mizuno</strong> (since 1945) on Hozenji Yokocho</li>
+            <li><strong>Kushikatsu</strong> (fried skewers) — try <strong>Daruma</strong>. RULE: no double-dipping the sauce</li>
+            <li><strong>Horumon</strong> grilled offal at the small smoky places off the main strip</li>
+            <li><strong>Pablo cheesecake</strong> — for dessert, started in Osaka</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>This is a sensory overload zone — kids will <em>love</em> it but might get tired. Plan it as an evening, eat a bunch of small things rather than one sit-down meal. Try the takoyaki — Osakans take this seriously; even a casual one will be the best they've had.</p>
+        </div>
+
+        <div class="detail-block photo">
+          <span class="detail-label">📸 Photo spot</span>
+          <p>Ebisu Bridge looking down the canal toward Glico Running Man — most-photographed spot in Osaka. Best at full dark when all neon is on.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 2–3 hrs (dinner crawl)</span>
+          <span class="info-item">💰 ¥300–1500/snack</span>
+          <span class="info-item">🚇 Namba Stn</span>
+          <span class="info-item">🌙 Best at night</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+    <div class="place" data-wiki="Kuromon Ichiba Market" data-search="Kuromon Ichiba Market Osaka">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Kuromon Ichiba Market <span class="jp-name">黒門市場</span></h4>
+        <p class="lead">"Osaka's kitchen" — 600m of covered indoor stalls selling fresh seafood, wagyu, fruit, and street food, with 170 years of history.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>Named after a black gate (<em>kuromon</em>) of a now-destroyed temple. Started as a fish market in the late Edo period (mid-1800s) — the area was perfect for fishermen coming up from Osaka Bay. For most of its history it was where professional chefs bought ingredients; today, more tourist-focused but still has stalls where Michelin chefs source.</p>
+        </div>
+
+        <div class="detail-block food">
+          <span class="detail-label">🍜 What to try</span>
+          <ul>
+            <li><strong>Fresh oysters</strong> shucked to order, ¥500–800 each — yes, in Israel-style</li>
+            <li><strong>Bluefin tuna sashimi</strong> sliced from a whole tuna at the front counter</li>
+            <li><strong>Wagyu beef skewers</strong> grilled on the spot</li>
+            <li><strong>Strawberries</strong> the size of golf balls — Japan's gift-fruit culture</li>
+            <li><strong>Sea urchin (uni)</strong> on rice — splurge ¥1500</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>Some stalls allow on-site grilling/sampling at small counters. Great place to let kids try new things in small portions. Avoid going right at lunch hour — crowded.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ 1.5 hrs (lunch)</span>
+          <span class="info-item">💰 ¥500–2000/dish</span>
+          <span class="info-item">🚇 Nipponbashi Stn</span>
+          <span class="info-item">💵 Bring cash</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="day-header">
+    <span class="day-label">Day 14 · Day Trip</span>
+    <h3>Himeji Castle</h3>
+  </div>
+  <div class="places">
+
+    <div class="place" data-wiki="Himeji Castle" data-search="Himeji Castle white heron">
+      <div class="gallery"><div class="main-img-wrap"><div class="loading">Loading…</div></div></div>
+      <div class="body">
+        <h4>Himeji Castle <span class="jp-name">姫路城</span></h4>
+        <p class="lead">"The White Heron Castle" — Japan's most beautiful, best-preserved feudal castle, never destroyed by war or earthquake.</p>
+
+        <div class="detail-block story">
+          <span class="detail-label">📖 The story</span>
+          <p>The site has been fortified since 1333; the current complex was completed in 1609 under <strong>Ikeda Terumasa</strong>, son-in-law of Tokugawa Ieyasu. 83 buildings survive: keep, gates, walls, defensive courtyards. The brilliant white exterior comes from special plaster — visually beautiful, and also <strong>fireproof</strong>, a 17th-century innovation.</p>
+          <p>The castle's nickname "White Heron" (Hakuro-jo) comes from the way the white walls and curved roofs resemble a heron taking flight. Survived WW2 bombings (the city around it was destroyed) and the 1995 Kobe earthquake. Underwent a 5-year, $50M restoration completed 2015 that restored the brilliant white plaster to its original look.</p>
+        </div>
+
+        <div class="detail-block">
+          <span class="detail-label">👀 Why it's the best castle</span>
+          <ul>
+            <li><strong>It's the original</strong> — unlike most "castles" in Japan, which are concrete 20th-century reconstructions</li>
+            <li><strong>Defensive maze design</strong> — the path to the keep zigzags through 21 gates and multiple courtyards designed to confuse attackers; you'll experience this walking up</li>
+            <li><strong>Six floors of original wooden interiors</strong> — climb to the top, see weapons racks, defensive holes, hidden trapdoors</li>
+            <li><strong>"Stone-dropping holes"</strong> — Western castles had murder holes; Japanese castles dropped boiling oil and rocks</li>
+            <li><strong>Cherry trees ring the castle</strong> — the iconic shot is the castle behind a foreground of sakura</li>
+          </ul>
+        </div>
+
+        <div class="detail-block kids">
+          <span class="detail-label">👨‍👩‍👧 Kid tip</span>
+          <p>This is a REAL samurai castle, not a reconstruction — your boys will appreciate the difference. The climb to the top floor is <strong>steep wooden stairs</strong>, increasingly narrow. They'll find spear racks, gun ports, evidence of the defensive design at every floor.</p>
+        </div>
+
+        <div class="detail-block photo">
+          <span class="detail-label">📸 Photo spot</span>
+          <p>The Sangoku-bori moat with cherry trees in front and the keep behind. From Himeji Station, the castle is visible at the end of a 1km tree-lined street — that's the postcard.</p>
+        </div>
+
+        <div class="quick-info">
+          <span class="info-item">⏱ Half day from Osaka</span>
+          <span class="info-item">💰 ¥1000/adult, ¥300/child</span>
+          <span class="info-item">🚇 Shinkansen 30 min from Osaka</span>
+          <span class="info-item">🌸 Castle + sakura = iconic</span>
+        </div>
+        <div class="actions"><a class="wiki-link" target="_blank">Wikipedia →</a><a class="search-link" target="_blank">📸 More photos →</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="day-header">
+    <span class="day-label">Day 15 · Departure</span>
+    <h3>KIX → TLV</h3>
+  </div>
+  <p style="color: var(--ink-soft); padding-left: 16px;">Train from Namba to Kansai International Airport (~50 min via Nankai Rapi:t Limited Express). Fly home.</p>
+</section>
+
+<!-- ============ FOOD ============ -->
+<section id="food" class="city">
+  <h2>Food Guide <span class="jp">食事</span> <span class="nights">Good + affordable</span></h2>
+  <p class="intro">Japan's best food is rarely the most expensive food — it's at conveyor-belt chains, specialty shops, depachika basements, and 7-Eleven. Picks below skew toward family-of-5 friendly: walk-in friendly, mostly under ¥10,000 ($70) for the whole family per meal, and unique enough to remember. Where reservations are mandatory, I've flagged it.</p>
+
+  <div class="day-header">
+    <span class="day-label">🍣 Sushi</span>
+    <h3>From ¥110/plate to ¥3,000/person</h3>
+  </div>
+  <div class="places">
+
+    <div class="place food">
+      <div class="body">
+        <h4>Conveyor sushi for the family <span class="jp-name">回転寿司</span></h4>
+        <p class="lead">The cheapest, most fun sushi experience — kids lose their minds. Plates ¥110–500. Family of 5 dinner: ¥4,000–7,000 ($28–50) total.</p>
+
+        <div class="detail-block food">
+          <span class="detail-label">3 worth seeking out</span>
+          <ul>
+            <li><strong>Uobei Shibuya</strong> — Sushi arrives via miniature <em>bullet-train rails</em> directly to your seat. Touch-screen ordering in English. ¥110–250/plate. The kid-magic option.</li>
+            <li><strong>Kura Sushi</strong> — Anime tie-ins (Demon Slayer, Pokemon). Every 5 empty plates triggers a capsule-toy vending machine at your booth. ¥120/plate. Locations everywhere.</li>
+            <li><strong>Sushiro</strong> — The biggest chain in Japan, freshest fish at this price tier. Real queues (40+ min at peak) — register on the Sushiro app to skip the wait. ¥120/plate.</li>
+          </ul>
+        </div>
+        <div class="quick-info">
+          <span class="info-item">⏱ 45 min</span>
+          <span class="info-item">💰 ¥5,000 for 5</span>
+          <span class="info-item">👨‍👩‍👧 Kid favorite</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="place food">
+      <div class="body">
+        <h4>Step up: real sushi, still affordable <span class="jp-name">立ち食い寿司</span></h4>
+        <p class="lead">Standing or counter sushi where a chef hands you each piece. ¥1,500–3,500/person.</p>
+
+        <div class="detail-block food">
+          <span class="detail-label">3 worth seeking out</span>
+          <ul>
+            <li><strong>Magurobito (Asakusa)</strong> — Tuna specialists; you watch the chef cut from a whole bluefin. Lunch sets ¥1,500–2,000. Reliable, walk-in.</li>
+            <li><strong>Sushizanmai</strong> — Founded by the legendary "Tuna King" Kiyoshi Kimura, who annually pays record sums at the Tokyo tuna auction. Open 24/7 (Tsukiji original, branches everywhere). Lunch sets ¥1,000–2,500.</li>
+            <li><strong>Izuju (Gion, Kyoto)</strong> — Since 1912. Kyoto-style <em>saba-zushi</em> (pressed mackerel sushi) — completely different from Tokyo Edomae style. ¥1,200/box, takeaway-friendly for hanami picnics.</li>
+          </ul>
+        </div>
+        <div class="quick-info">
+          <span class="info-item">⏱ 1 hr</span>
+          <span class="info-item">💰 ¥8,000–15,000 for 5</span>
+          <span class="info-item">📅 No reservation needed</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="day-header">
+    <span class="day-label">🍜 Ramen</span>
+    <h3>¥800–1,500/bowl</h3>
+  </div>
+  <div class="places">
+
+    <div class="place food">
+      <div class="body">
+        <h4>Tokyo ramen <span class="jp-name">東京ラーメン</span></h4>
+        <p class="lead">Tokyo has over 4,000 ramen shops — Japan's ramen capital. Each of these is a distinct style.</p>
+
+        <div class="detail-block food">
+          <span class="detail-label">3 worth seeking out</span>
+          <ul>
+            <li><strong>Ichiran (Shibuya)</strong> — The iconic <em>solo-booth</em> experience: each diner sits in a tiny private cubicle facing the kitchen; ramen slides through a bamboo curtain. Tonkotsu pork-bone broth. ¥980. Famous; line moves fast. They'll seat family groups together if asked.</li>
+            <li><strong>Afuri (Harajuku)</strong> — <em>Yuzu-shio</em> — citrus-salt broth, completely transparent, much lighter than typical. ¥1,100. Best ramen for kids who don't love heavy pork broth. Also in Roppongi, Shinjuku, Ebisu.</li>
+            <li><strong>Fuunji (Shinjuku)</strong> — <em>Tsukemen</em> specialist (you dip cold noodles into concentrated hot broth). ¥1,150. Locals call this the best in Tokyo — and the queue confirms it. Go at 11am or 2:30pm to avoid 60+ min waits.</li>
+          </ul>
+        </div>
+        <div class="quick-info">
+          <span class="info-item">⏱ 30 min</span>
+          <span class="info-item">💰 ¥5,000 for 5</span>
+          <span class="info-item">🚫 Mostly cash</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="place food">
+      <div class="body">
+        <h4>Kyoto & Osaka ramen <span class="jp-name">京都・大阪ラーメン</span></h4>
+        <p class="lead">Different broth philosophies in each city — worth trying both.</p>
+
+        <div class="detail-block food">
+          <span class="detail-label">3 worth seeking out</span>
+          <ul>
+            <li><strong>Honke Daiichi Asahi (Kyoto Station)</strong> — Open since 1947. Kyoto-style soy ramen: dark broth with a slick of backfat on top, surprisingly clean-tasting. ¥850. Right next to Kyoto Station; queue can be long but moves fast.</li>
+            <li><strong>Menya Inoichi Hanare (Kyoto)</strong> — Modern Kyoto ramen with seasonal premium ingredients (truffle, scallop). Michelin Bib Gourmand. ¥1,300. Walk-in friendly off-peak.</li>
+            <li><strong>Kamukura (Dotonbori, Osaka)</strong> — Famous Dotonbori ramen, distinctive sweet-savory broth topped with mountain of stewed cabbage. ¥850. Open late, often 24/7.</li>
+          </ul>
+        </div>
+        <div class="quick-info">
+          <span class="info-item">⏱ 30 min</span>
+          <span class="info-item">💰 ¥4,500 for 5</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="day-header">
+    <span class="day-label">🥢 Local specialties — one signature dish per city</span>
+    <h3>The thing each city does best</h3>
+  </div>
+  <div class="places">
+
+    <div class="place food">
+      <div class="body">
+        <h4>Tokyo: Tonkatsu <span class="jp-name">とんかつ</span></h4>
+        <p class="lead">Breaded, deep-fried pork cutlet — perfected in Tokyo. ¥1,500–3,500/person.</p>
+
+        <div class="detail-block food">
+          <span class="detail-label">3 worth seeking out</span>
+          <ul>
+            <li><strong>Tonkatsu Maisen (Aoyama Honten)</strong> — Inside a converted 1930s public bathhouse. Heritage "kurobuta" black-hair pork, soft enough to cut with chopsticks. ¥1,800–3,500. Branches in major dept stores if Aoyama's a detour.</li>
+            <li><strong>Butagumi (Roppongi)</strong> — Eight+ varieties of pork from different breeds/regions, ordered like wine. Each kind ¥2,500–4,000. Reservations recommended.</li>
+            <li><strong>Katsukura</strong> — Reliable chain inside most department stores. Sesame seeds you grind into the sauce yourself — kids love this ritual. Family meal ¥7,500.</li>
+          </ul>
+        </div>
+        <div class="quick-info">
+          <span class="info-item">⏱ 1 hr</span>
+          <span class="info-item">💰 ¥10,000–17,000 for 5</span>
+          <span class="info-item">🍚 Unlimited rice + cabbage</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="place food">
+      <div class="body">
+        <h4>Kyoto: Nishiki Market + ancient soba <span class="jp-name">京料理</span></h4>
+        <p class="lead">Kyoto's signature is kaiseki — but at $200+/person it's a hard sell for 5. Affordable Kyoto food culture:</p>
+
+        <div class="detail-block food">
+          <span class="detail-label">3 worth seeking out</span>
+          <ul>
+            <li><strong>Nishiki Market</strong> — "Kyoto's Kitchen": 400-year-old, 5-block covered market. Walk the length sampling: pickles, tofu, yuba (tofu skin), yatsuhashi (cinnamon mochi), soy-milk donuts, mochi pounding demos, tako-tamago (octopus with a quail egg inside its head). Family of 5 grazes for ¥3,000.</li>
+            <li><strong>Honke Owariya</strong> — Soba since 1465. That's <em>560 years</em>. Their signature "Hourai soba" comes in 5 stacked lacquered boxes with rotating toppings (egg, shiitake, daikon, sesame, nori). ¥1,500–2,200.</li>
+            <li><strong>Omen (Gion)</strong> — Hand-pulled udon. You assemble each bowl yourself with toppings (ginger, sesame, scallions) at the table. ¥1,500.</li>
+          </ul>
+        </div>
+        <div class="quick-info">
+          <span class="info-item">⏱ Market 2 hr, restaurants 1 hr</span>
+          <span class="info-item">💰 ¥3,000–10,000 for 5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="place food">
+      <div class="body">
+        <h4>Osaka: The street-food trinity <span class="jp-name">大阪粉もん</span></h4>
+        <p class="lead">Osaka's philosophy is <em>kuidaore</em> — "eat until you collapse." Hit all three on a single Dotonbori night.</p>
+
+        <div class="detail-block food">
+          <span class="detail-label">3 worth seeking out</span>
+          <ul>
+            <li><strong>Mizuno (Dotonbori)</strong> — Okonomiyaki since 1945. Their <em>yamaimo-yaki</em> is the signature — uses grated mountain yam instead of flour, yields almost-soufflé texture. ¥1,500–2,200. Cash only, often a queue, no reservations.</li>
+            <li><strong>Wanaka Sennichimae (near Namba)</strong> — Takoyaki (octopus balls). Crispy outside, molten lava inside. 8 balls ¥600. Eat hot but careful — they're 200°F (95°C) in the center; locals blow on each ball methodically.</li>
+            <li><strong>Daruma (Shinsekai)</strong> — Kushikatsu (deep-fried skewers — meat, vegetables, mochi, anything). One communal sauce trough per table; <em>ABSOLUTELY no double-dipping</em> (signs on every wall, ¥10,000 fine). 10 sticks ¥1,500.</li>
+          </ul>
+        </div>
+        <div class="quick-info">
+          <span class="info-item">⏱ Crawl 2–3 hrs</span>
+          <span class="info-item">💰 ¥15,000 for 5 (3 stops)</span>
+          <span class="info-item">💵 Bring cash</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="day-header">
+    <span class="day-label">🏪 Cheap + always open</span>
+    <h3>Underestimate at your peril</h3>
+  </div>
+  <div class="places">
+
+    <div class="place food">
+      <div class="body">
+        <h4>Convenience stores <span class="jp-name">コンビニ</span></h4>
+        <p class="lead">Japanese <em>conbini</em> are genuinely great food — Michelin chefs eat at them. Breakfast for 5: ¥2,000–2,500 ($14–18).</p>
+
+        <div class="detail-block food">
+          <span class="detail-label">What each chain is famous for</span>
+          <ul>
+            <li><strong>7-Eleven</strong> — The legendary <em>egg sandwich</em> (Anthony Bourdain called it "unnaturally good"). Best onigiri (tuna mayo, salmon, ume plum). Premium puddings.</li>
+            <li><strong>Family Mart</strong> — <em>"Famichiki"</em> fried chicken at the counter (¥230 — your kids will ask for seconds). Best hot foods overall.</li>
+            <li><strong>Lawson</strong> — <em>Karaage-kun</em> (bite-size boneless fried chicken, ¥260). Best premium desserts and roll cakes. Best fresh-baked bread in the morning.</li>
+          </ul>
+        </div>
+        <p style="color: var(--ink-soft); font-size: 0.85rem; margin-top: 8px;">All have hot food counters, fresh sandwiches changed twice daily, ATMs, free WiFi, beer/wine. Open 24/7. Use them for breakfast and shinkansen snacks.</p>
+      </div>
+    </div>
+
+    <div class="place food">
+      <div class="body">
+        <h4>Department store basements <span class="jp-name">デパ地下</span></h4>
+        <p class="lead">"Depachika" — the food-hall floor of a major department store. Restaurant-grade prepared food sold by the gram. Family dinner of 5: ¥5,000–8,000.</p>
+
+        <div class="detail-block food">
+          <span class="detail-label">3 worth seeking out</span>
+          <ul>
+            <li><strong>Daimaru Tokyo (Tokyo Station, B1)</strong> — Hundreds of stalls. Crucially: pick up your <em>ekiben</em> (train bento) here on the way to the shinkansen platform.</li>
+            <li><strong>Isetan Shinjuku (B1)</strong> — The most famous depachika in Japan. Cake and patisserie displays look like jewelry stores. Pricier but spectacular.</li>
+            <li><strong>Daimaru Umeda (Osaka, B1)</strong> — Strategy: after <strong>7pm</strong>, prepared foods go on <strong>30–50% discount</strong> as they near sell-by time. Show up at 7:30pm for half-price sushi platters.</li>
+          </ul>
+        </div>
+        <div class="quick-info">
+          <span class="info-item">⏱ 30 min</span>
+          <span class="info-item">⏰ Discounts after 7pm</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="place food">
+      <div class="body">
+        <h4>Reliable cheap chains <span class="jp-name">チェーン店</span></h4>
+        <p class="lead">When you need a fast, predictable, sub-¥1,000-per-person meal.</p>
+
+        <div class="detail-block food">
+          <span class="detail-label">3 worth seeking out</span>
+          <ul>
+            <li><strong>CoCo Ichibanya</strong> — Curry rice; customize spice level (1–10) + toppings on a checklist. Kids love designing their own curry. ¥700–1,100/person.</li>
+            <li><strong>Yoshinoya / Sukiya</strong> — <em>Gyudon</em> (sliced beef on rice) for ¥400. Open 24/7. The blue-collar lunch of Japan — try it once.</li>
+            <li><strong>Saizeriya</strong> — Italian-Japanese chain. Margherita pizza ¥400. Pasta ¥500. 100ml of wine for ¥100. Embarrassingly good value.</li>
+          </ul>
+        </div>
+        <div class="quick-info">
+          <span class="info-item">💰 ¥2,500–4,000 for 5</span>
+          <span class="info-item">📋 Picture menus</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="day-header">
+    <span class="day-label">🚄 Shinkansen day strategy</span>
+    <h3>Ekiben — bento for the train</h3>
+  </div>
+  <div class="places">
+
+    <div class="place food">
+      <div class="body">
+        <h4>Ekiben <span class="jp-name">駅弁</span></h4>
+        <p class="lead">"Station bento" — a 100-year tradition of beautifully-packaged regional bento boxes sold at major train stations. ¥1,200–2,500 each.</p>
+
+        <div class="detail-block food">
+          <span class="detail-label">Where to buy</span>
+          <ul>
+            <li><strong>GranSta Tokyo (Tokyo Station B1)</strong> — The flagship ekiben hall. 100+ varieties from across Japan. Buy here before catching the shinkansen to Kyoto.</li>
+            <li><strong>Kyoto Station Isetan B1</strong> — Smaller selection but excellent Kyoto-style boxes. Catch the train back to Osaka or Tokyo with one in hand.</li>
+            <li><strong>Shin-Osaka Station ekiben counters</strong> — Best Osaka specialties for the way home, including takoyaki bento.</li>
+          </ul>
+        </div>
+
+        <div class="detail-block food">
+          <span class="detail-label">3 most famous ekiben</span>
+          <ul>
+            <li><strong>Daruma-bento (Gunma)</strong> — Comes packaged in a red plastic <em>tanuki</em> raccoon-dog figurine; kids keep the figurine. ¥1,250.</li>
+            <li><strong>Yonezawa Gyu Niku-don (Yamagata)</strong> — Premium wagyu beef on rice, served warm thanks to a self-heating string mechanism. Pull the string and the bento heats itself in 5 minutes. ¥1,500.</li>
+            <li><strong>Anago Meshi (Hiroshima)</strong> — Saltwater eel over rice; available at Tokyo Station. ¥1,800.</li>
+          </ul>
+        </div>
+
+        <p style="color: var(--ink-soft); font-size: 0.85rem; margin-top: 8px;"><strong>Etiquette:</strong> eating on shinkansen is normal and expected. Eating on commuter trains is not — wait for the platform or station.</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============ COSTS ============ -->
+<section id="costs" class="summary-box">
+  <h2>Cost Estimate (USD, family of 5)</h2>
+  <table class="cost-table">
+    <tr><th>Category</th><th>Notes</th><th style="text-align: right;">USD</th><th style="text-align: right;">ILS (₪)</th></tr>
+    <tr><td>Flights TLV ↔ Japan</td><td>Open-jaw: NRT/HND in, KIX out. Book by Oct 2026.</td><td class="amount">$6,000–8,500</td><td class="amount-ils ils-loading" data-usd-range="6000-8500">…</td></tr>
+    <tr><td>Accommodation (14 nights)</td><td>Apartments / Airbnb, $270–390/night.</td><td class="amount">$3,800–5,500</td><td class="amount-ils ils-loading" data-usd-range="3800-5500">…</td></tr>
+    <tr><td>Intercity transport</td><td>Shinkansen Tokyo→Kyoto→Osaka + day trips. JR Pass not worth it.</td><td class="amount">$700–900</td><td class="amount-ils ils-loading" data-usd-range="700-900">…</td></tr>
+    <tr><td>Local transport</td><td>IC cards (Suica/Icoca) for metro, bus.</td><td class="amount">$300–400</td><td class="amount-ils ils-loading" data-usd-range="300-400">…</td></tr>
+    <tr><td>Food</td><td>$40–60/person/day across casual + a few splurges.</td><td class="amount">$2,800–4,200</td><td class="amount-ils ils-loading" data-usd-range="2800-4200">…</td></tr>
+    <tr><td>Tokyo DisneySea</td><td>Tickets only (food/souvenirs extra).</td><td class="amount">$400–500</td><td class="amount-ils ils-loading" data-usd-range="400-500">…</td></tr>
+    <tr><td>Attractions</td><td>Hakone Free Pass, teamLab, Himeji, temples, museums.</td><td class="amount">$600–900</td><td class="amount-ils ils-loading" data-usd-range="600-900">…</td></tr>
+    <tr><td>Misc</td><td>eSIM, luggage forwarding, souvenirs, contingency.</td><td class="amount">$800–1,200</td><td class="amount-ils ils-loading" data-usd-range="800-1200">…</td></tr>
+    <tr class="total"><td>Total</td><td>Mid-range center ~$18.5–19.5K — fits target with headroom.</td><td class="amount">$15,400–22,100</td><td class="amount-ils ils-loading" data-usd-range="15400-22100">…</td></tr>
+  </table>
+</section>
+
+<!-- ============ TIMELINE ============ -->
+<section id="timeline" class="summary-box">
+  <h2>Critical Booking Timeline</h2>
+  <ul>
+    <li><strong>Now (May 2026):</strong> Confirm exact dates. Start tracking flight prices on Google Flights.</li>
+    <li><strong>Aug–Oct 2026:</strong> Book flights — 10 months out is the sweet spot for TLV → Asia.</li>
+    <li><strong>Sep–Nov 2026:</strong> Book apartments — family-of-5 Kyoto apartments sell out 6+ months ahead during sakura.</li>
+    <li><strong>Jan 2027:</strong> Buy DisneySea tickets (date-specific). Reserve shinkansen seats 1 month before travel.</li>
+    <li><strong>Feb 2027:</strong> eSIM, IC card setup, luggage forwarding plan, restaurant reservations (Pontocho, Dotonbori).</li>
+  </ul>
+</section>
+
+</main>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close">×</button>
+  <img id="lightbox-img" alt="">
+</div>
+
+<footer>
+  🌸 Generated for Pavel's family Japan trip · Late March – Early April 2027 · Photos from Wikipedia / Wikimedia Commons; click "📸 More photos" on any place for varied sources
+</footer>
+
+<script>
+// Skip these substrings in image URLs (icons, maps, low-quality)
+const SKIP_PATTERNS = /icon|logo|map|coat[-_ ]of[-_ ]arms|location|diagram|seal|flag|svg$|symbol/i;
+
+function biggestSrc(item) {
+  if (!item.srcset || !item.srcset.length) return null;
+  // Take highest scale
+  const sorted = [...item.srcset].sort((a, b) => parseFloat(b.scale || 1) - parseFloat(a.scale || 1));
+  let url = sorted[0].src;
+  if (url.startsWith('//')) url = 'https:' + url;
+  return url;
+}
+
+function isUsableImage(item) {
+  if (item.type !== 'image') return false;
+  const title = (item.title || '').toLowerCase();
+  if (SKIP_PATTERNS.test(title)) return false;
+  if (!item.srcset || !item.srcset.length) return false;
+  const src = biggestSrc(item);
+  if (!src) return false;
+  if (SKIP_PATTERNS.test(src)) return false;
+  return true;
+}
+
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+document.getElementById('lightbox-close').onclick = () => lightbox.classList.remove('open');
+lightbox.onclick = (e) => { if (e.target === lightbox) lightbox.classList.remove('open'); };
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lightbox.classList.remove('open'); });
+
+function openLightbox(src) {
+  lightboxImg.src = src;
+  lightbox.classList.add('open');
+}
+
+async function loadPlace(el) {
+  const title = el.dataset.wiki;
+  const search = el.dataset.search || title;
+  const noWiki = el.dataset.noWiki;
+  const galleryWrap = el.querySelector('.gallery');
+  const mainImgWrap = galleryWrap ? galleryWrap.querySelector('.main-img-wrap') : null;
+  const wikiLink = el.querySelector('.wiki-link');
+  const searchLink = el.querySelector('.search-link');
+
+  if (searchLink && search) {
+    searchLink.href = `https://www.google.com/search?q=${encodeURIComponent(search + ' Japan')}&tbm=isch`;
+  }
+
+  // Handle cards with no Wikipedia article (e.g. teamLab — copyrighted installation art)
+  if (noWiki) {
+    if (wikiLink) wikiLink.style.display = 'none';
+    if (mainImgWrap) {
+      const reason = noWiki === 'copyright'
+        ? 'Installation photos are copyrighted'
+        : 'No Wikipedia article available';
+      mainImgWrap.innerHTML = `
+        <div class="no-wiki-fallback">
+          <div>
+            <div class="nwf-icon">🌌</div>
+            <div class="nwf-text">${reason}</div>
+            <div class="nwf-sub">Browse photos from blogs, Instagram, official sources</div>
+            <a class="nwf-btn" href="https://www.google.com/search?q=${encodeURIComponent(search + ' Japan')}&tbm=isch" target="_blank" rel="noopener">📸 View photos on Google →</a>
+          </div>
+        </div>
+      `;
+    }
+    return;
+  }
+
+  if (!title) return;
+
+  if (wikiLink) {
+    wikiLink.href = `https://en.wikipedia.org/wiki/${encodeURIComponent(title)}`;
+  }
+
+  try {
+    // Fetch media-list for multiple images
+    const res = await fetch(`https://en.wikipedia.org/api/rest_v1/page/media-list/${encodeURIComponent(title)}`);
+    if (!res.ok) throw new Error('media-list not ok');
+    const data = await res.json();
+    const items = (data.items || []).filter(isUsableImage);
+    const images = items.slice(0, 4).map(biggestSrc).filter(Boolean);
+
+    if (images.length === 0) {
+      // Fallback: summary endpoint
+      const sumRes = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`);
+      if (sumRes.ok) {
+        const sumData = await sumRes.json();
+        const img = (sumData.originalimage && sumData.originalimage.source) || (sumData.thumbnail && sumData.thumbnail.source);
+        if (img) images.push(img);
+      }
+    }
+
+    if (images.length === 0) {
+      mainImgWrap.querySelector('.loading').textContent = '(no image available)';
+      return;
+    }
+
+    // Build gallery
+    mainImgWrap.innerHTML = '';
+    const mainImg = document.createElement('img');
+    mainImg.src = images[0];
+    mainImg.alt = title;
+    mainImg.loading = 'lazy';
+    mainImgWrap.appendChild(mainImg);
+    mainImgWrap.onclick = () => openLightbox(mainImg.src);
+
+    if (images.length > 1) {
+      const thumbs = document.createElement('div');
+      thumbs.className = 'thumbs';
+      images.forEach((url, idx) => {
+        const t = document.createElement('img');
+        t.src = url;
+        t.alt = `${title} ${idx + 1}`;
+        t.loading = 'lazy';
+        if (idx === 0) t.classList.add('active');
+        t.onclick = () => {
+          mainImg.src = url;
+          thumbs.querySelectorAll('img').forEach(im => im.classList.remove('active'));
+          t.classList.add('active');
+        };
+        thumbs.appendChild(t);
+      });
+      galleryWrap.appendChild(thumbs);
+    }
+  } catch (err) {
+    const loading = mainImgWrap.querySelector('.loading');
+    if (loading) loading.textContent = '(image unavailable)';
+  }
+}
+
+document.querySelectorAll('.place').forEach(loadPlace);
+
+// Live currency rates (frankfurter.dev — free, no key)
+async function loadRates() {
+  try {
+    const res = await fetch('https://api.frankfurter.dev/v1/latest?from=USD&to=JPY,ILS');
+    if (!res.ok) throw new Error('rates not ok');
+    const data = await res.json();
+    const usdToJpy = data.rates.JPY;
+    const usdToIls = data.rates.ILS;
+    const ilsToJpy = usdToJpy / usdToIls;
+
+    // Update top rates bar
+    const set = (sel, val) => {
+      const el = document.querySelector(`[data-rate="${sel}"]`);
+      if (el) el.textContent = val;
+    };
+    set('usd-jpy', `¥${Math.round(usdToJpy)}`);
+    set('ils-jpy', `¥${ilsToJpy.toFixed(1)}`);
+    set('jpy-usd', `$${(100 / usdToJpy).toFixed(2)}`);
+    set('jpy-ils', `₪${(100 * usdToIls / usdToJpy).toFixed(2)}`);
+    const dateEl = document.querySelector('.rates-date');
+    if (dateEl) dateEl.textContent = data.date;
+
+    // Populate ILS column in cost table
+    document.querySelectorAll('[data-usd-range]').forEach(el => {
+      const [low, high] = el.dataset.usdRange.split('-').map(Number);
+      const ilsLow = Math.round(low * usdToIls / 100) * 100;
+      const ilsHigh = Math.round(high * usdToIls / 100) * 100;
+      el.textContent = `₪${ilsLow.toLocaleString()}–${ilsHigh.toLocaleString()}`;
+      el.classList.remove('ils-loading');
+    });
+  } catch (err) {
+    const bar = document.getElementById('rates-bar');
+    if (bar) bar.querySelector('.rates-meta').textContent = '(could not load live rates)';
+    document.querySelectorAll('[data-usd-range]').forEach(el => {
+      el.textContent = '—';
+    });
+  }
+}
+loadRates();
+</script>
+
+</body>
+</html>
